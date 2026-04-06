@@ -1,7 +1,5 @@
 source("../../scFunctions.R")
 
-# previously calculated parameters
-clusteringParams <- fread("../../Data/ClusteringParams_RNAFiltering.csv")
 args_file <- fread("../../Data/WholeCohort.csv")
 
 # atac requirements

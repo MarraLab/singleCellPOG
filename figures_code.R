@@ -674,6 +674,7 @@ getCNVProp <- function(mb, cnv){
 }
 
 # Figure 4
+# A
 # recoding treatment response
 tx_history <- fread("/projects/POG/Clinical_Actions/Oasis_data/20231204_merge_20221014/drug_treatment.tab") %>%
   dplyr::filter(patient_id %in% multiBiop_ids,
@@ -708,3 +709,621 @@ txHistory_toPlot <- tx_history %>%
   mutate(biopsyID = dense_rank(dateSinceEarliest)) %>% 
   mutate(daysAfterBio_start = course_begin_on - earliestBiopsyDate,
          progressionDate = progression_on - earliestBiopsyDate)
+
+txHistory_toPlot$patient_id <- factor(txHistory_toPlot$patient_id, 
+                                      levels = rev(c("POG003", "POG217", "POG590", "POG130", "POG643")))
+txHistory_toPlot %>%
+  ggplot() +
+  geom_segment(aes(x = daysAfterBio_start, xend = daysAfterBio_start + course_duration, 
+                   y = patient_id, yend = patient_id, colour = TreatmentResponse),
+               size = 6) +
+  geom_point(aes(x = progressionDate, y = patient_id), shape = 21, fill = "grey", colour = "black", size = 3) +
+  geom_point(aes(x = dateSinceEarliest, y = patient_id), shape = 23, fill = "red", colour = "black", size = 3) +
+  facet_grid(~biopsyID, scales = "free", space = "free") +
+  theme_bw() +
+  scale_colour_brewer(palette = "Dark2") +
+  labs(x = "Days after First Biopsy", y = "Patient ID", colour = "Response") +
+  theme(legend.position = "top",
+        strip.text = element_text(size = 12),
+        axis.text = element_text(size = 16),
+        axis.title = element_text(size = 20),
+        legend.text = element_text(size = 16),
+        legend.title = element_text(size = 20))
+
+# B
+seu <- multiBiop_list[["POG003"]]
+seu <- AddMetaData(seu, allSamples_merged[[]])
+
+# subset for malignant cells and re-cluster
+DefaultAssay(seu) <- "RNA"
+maligSeu <- subset(seu, identity == "Malignant") %>%
+  FindNeighbors() %>%
+  FindClusters(resolution = 0.5)
+
+pog003_2biop <- subset(maligSeu, sample %in% c("POG003_3", "POG003_4"))
+pog003_2biop <- FindNeighbors(pog003_2biop) %>%
+  FindClusters(resolution = 0.5)
+pog003_2biop <- AddMetaData(pog003_2biop, inner_join(
+  data.frame(sample = pog003_2biop$sample),
+  idMapping,
+  by = "sample"
+))
+DimPlot(pog003_2biop, reduction = "rna.umap", group.by = c("newID")) +
+  scale_colour_jama() +
+  xlim(-8, 5) +
+  ylim(-12,5) +
+  ggtitle(NULL) +
+  labs(x = "UMAP1", y = "UMAP2") +
+  theme(strip.text = element_text(size = 20),
+        axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22))
+
+# C
+DimPlot(pog003_2biop, reduction = "rna.umap", group.by = c("seurat_clusters"), alpha = 0.8) +
+  paletteer::scale_colour_paletteer_d("calecopal::kelp1") +
+  xlim(-8, 5) +
+  ylim(-12,5) +
+  ggtitle(NULL) +
+  labs(x = "UMAP1", y = "UMAP2") +
+  theme(strip.text = element_text(size = 20),
+        axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22))
+
+# D
+library(SeuratExtend)
+options(spe = "human")
+
+pog003_2biop <- GeneSetAnalysis(pog003_2biop, genesets = hall50$human)
+hm50 <- c("oxidative", "glycolysis", "oxygen", "fatty", "adipogenesis", "hypoxia", "apoptosis", "mtorc1", "tgf", "mapk")
+hmIndices <- which(grepl(paste(hm50, collapse = "|"),
+                          rownames(pog003_2biop@misc$AUCell$genesets),
+                         ignore.case = T))
+
+# sorted in order that makes sense
+hmIndices <- c(26, 34, 35, 33, 12, 2, 36)
+matr <- pog003_2biop@misc$AUCell$genesets[hmIndices,]
+# stats <- CalcStats(matr, f = pog003_2biop$seurat_clusters)
+Heatmap(CalcStats(matr, f = pog003_2biop$seurat_clusters, method = "mean")) +
+  theme(strip.text = element_text(size = 20),
+        axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22)) + 
+  labs(x = "Cluster", fill = "Mean") +
+  paletteer::scale_fill_paletteer_c("grDevices::Inferno", limits = c(0, 0.1))
+
+# E
+pog217 <- multiBiop_list[["POG217"]]
+pog217 <- AddMetaData(pog217, allSamples_merged[[]])
+
+tSeu <- subset(pog217, identity == "NK/T") %>%
+  seurat_rna_pipeline() %>%
+  FindNeighbors() %>%
+  FindClusters(resolution = 0.5)
+
+# T cell umaps
+tUMAP <- data.frame("UMAP_1" = tSeu@reductions[["rna.umap"]]@cell.embeddings[,"rnaumap_1"],
+                    "UMAP_2" = tSeu@reductions[["rna.umap"]]@cell.embeddings[,"rnaumap_2"],
+                    "Biopsy" = tSeu$sample,
+                    "Cluster" = tSeu$seurat_clusters,
+                    "Subtype" = tSeu$subtype)
+
+DimPlot(tSeu, reduction = "rna.umap", group.by = c("sample")) +
+  scale_colour_jama() +
+  labs(x = "UMAP1", y = "UMAP2") +
+  ggtitle(NULL) +
+  theme(
+    axis.text       = element_text(size = 16),
+    axis.title      = element_text(size = 18),
+    legend.text     = element_text(size = 16),
+    legend.title    = element_text(size = 18),
+    title = element_text(size = 20)
+  )
+
+# F
+DimPlot(tSeu, reduction = "rna.umap", group.by = c("subtype")) +
+  paletteer::scale_color_paletteer_d("MoMAColors::Rattner") +
+  # theme(legend.position = "bottom") +
+  labs(x = "UMAP1", y = "UMAP2") +
+  ggtitle(NULL) +
+  theme(
+    axis.text       = element_text(size = 16),
+    axis.title      = element_text(size = 18),
+    legend.text     = element_text(size = 16),
+    legend.title    = element_text(size = 18),
+    title = element_text(size = 20)
+  )
+
+# G
+plotCluster_knownMarkers <- function(seu, geneList){
+  meanExpr_sub <- data.frame(
+    barcode = character(),
+    cluster = numeric(),
+    category = character(),
+    meanExpr = numeric()
+  )
+  
+  for(i in seq(1, length(geneList))){
+    genes <- intersect(Features(seu), geneList[[i]])
+    if(length(genes) <= 1){next}
+    meanExpr <- seu[["RNA"]]$data[genes,] %>% colMeans(na.rm = T)
+    out <- data.frame(
+      barcode = colnames(seu),
+      cluster = seu$seurat_clusters,
+      category = names(geneList)[i],
+      meanExpr = meanExpr
+    )
+    meanExpr_sub <- rbind(meanExpr_sub, out)
+  }
+  
+  return(
+    meanExpr_sub %>%
+      ggplot(aes(x = cluster, y = meanExpr)) +
+      geom_violin(width = 1.2, scale = "width") +
+      geom_boxplot(width = 0.1) +
+      facet_wrap(~category, ncol = 1) +
+      theme_bw() +
+      theme(legend.position = "bottom",
+            panel.grid.major = element_blank(),
+            panel.grid.minor = element_blank()) +
+      theme(strip.text = element_text(size = 16),
+            axis.text = element_text(size = 16),
+            axis.title = element_text(size = 20),
+            legend.text = element_text(size = 16),
+            legend.title = element_text(size = 20),
+            axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),) +
+      labs(x = "Cluster", y = "Mean Expression of Marker Genes Per Cell")
+    )
+}
+
+tCell_markers <- list(
+  "CD8_Cytotoxic" = c("CD8A", "CD8B", "GZMB", "PRF1"),
+  "CD4" = c("CD4", "IL7R"),
+  "Tregs" = c("FOXP3", "IL2RA"),
+  "Exhaustion" = c("PDCD1", "LAG3", "HAVCR2", "TIGIT", "CTLA4"),
+  "NK" = c("NKG7", "GNLY", "KLRB1"),
+  "Proliferative" = c("MKI67", "TOP2A", "PCNA")
+)
+
+plotCluster_knownMarkers(tSeu, tCell_markers)  
+
+tSeu$subtype <- case_when(
+  tSeu$seurat_clusters == "0" ~ "CD8",
+  tSeu$seurat_clusters == "1" ~ "CD4",
+  tSeu$seurat_clusters == "2" ~ "CD8_ExhHi",
+  tSeu$seurat_clusters == "3" ~ "Tregs",
+  tSeu$seurat_clusters == "4" ~ "NK",
+  tSeu$seurat_clusters == "5" ~ "Proliferating",
+  tSeu$seurat_clusters == "6" ~ "Unknown",
+  tSeu$seurat_clusters == "7" ~ "CD4"
+)
+
+# H
+# running CellChat
+CellChatDB <- CellChatDB.human
+CellChatDB.use <- subsetDB(CellChatDB)
+
+runCellChat <- function(seu, ident, savePath, savePath_cc){
+  # Idents(seu) <- ident
+  DefaultAssay(seu) <- "RNA"
+  seu <- JoinLayers(seu, assay = "RNA")
+  
+  seu <- NormalizeData(seu)
+  meta <- data.frame(
+    samples = seu$orig.ident
+  )
+  
+  cellChat <- createCellChat(object = seu, group.by = ident, assay = "RNA")
+  cellChat <- addMeta(cellChat, meta = meta)
+  
+  cellChat@DB <- CellChatDB.use
+  
+  cellChat <- subsetData(cellChat)
+  cellChat <- identifyOverExpressedGenes(cellChat)
+  cellChat <- identifyOverExpressedInteractions(cellChat)
+  
+  cellChat <- smoothData(cellChat, adj = PPI.human)
+  
+  cellChat <- computeCommunProb(cellChat, raw.use = FALSE, type = "triMean")
+  
+  cellChat <- filterCommunication(cellChat, min.cells = 10)
+  cellChat <- aggregateNet(cellChat)
+  
+  # sourceIndex <- which(grepl(paste(unique(endo_corrected$subtypes), collapse = "|"),
+  #                            levels(cellChat@idents)))
+  plot <- netVisual_bubble(cellChat, remove.isolate = FALSE)
+
+  write_csv(as.data.frame(plot[["data"]]), savePath)
+  saveRDS(cellChat, savePath_cc)
+}
+
+pog217_1_malig <- subset(maligSeu, sample == "POG217_1")  %>%
+  seurat_rna_pipeline() %>%
+  FindNeighbors() %>%
+  FindClusters(resolution = 0.1)
+pog217_1_malig$subtype <- paste("Malignant", pog217_1_malig$seurat_clusters, sep = "_")
+
+pog217_1_cellchat <- subset(pog217, identity %in% c("NK/T", "Malignant") & sample == "POG217_1")
+pog217_1_cellchat <- AddMetaData(pog217_1_cellchat, rbind(tSeu[[]], pog217_1_malig[[]]))
+pog217_1_cellchat$subtype <- as.factor(pog217_1_cellchat$subtype)
+
+runCellChat(pog217_1_cellchat, 
+            "subtype", 
+            paste0("../../Objects/POG217_1/tCellMalig_interactions.csv"), 
+            paste0("../../Objects/POG217_1/tCellMalig_cellChat.RDS"))
+
+pog217_2_malig <- subset(maligSeu, sample == "POG217_2")  %>%
+  seurat_rna_pipeline() %>%
+  FindNeighbors() %>%
+  FindClusters(resolution = 0.1)
+pog217_2_malig$subtype <- paste("Malignant", pog217_2_malig$seurat_clusters, sep = "_")
+
+pog217_2_cellchat <- subset(pog217, identity %in% c("NK/T", "Malignant") & sample == "POG217_2")
+pog217_2_cellchat <- AddMetaData(pog217_2_cellchat, rbind(tSeu[[]], pog217_2_malig[[]]))
+pog217_2_cellchat$subtype <- as.factor(pog217_2_cellchat$subtype)
+
+runCellChat(pog217_2_cellchat, 
+            "subtype", 
+            paste0("../../Objects/POG217_2/tCellMalig_interactions.csv"), 
+            paste0("../../Objects/POG217_2/tCellMalig_cellChat.RDS"))
+
+pog217_1_ccInter <- fread("../../Objects/POG217_1/tCellMalig_interactions.csv")
+pog217_2_ccInter <- fread("../../Objects/POG217_2/tCellMalig_interactions.csv")
+
+# interactions
+pog217_inter <- rbind(
+  mutate(pog217_1_ccInter, sample = "POG217_Bx1"),
+  mutate(pog217_2_ccInter, sample = "POG217_Bx2")
+) %>%
+  dplyr::filter(grepl("Malignant", source), 
+                target %in% tSeu$subtype,
+                receptor %in% c(tCell_markers[["Exhaustion"]])) %>%
+  group_by(target, ligand, receptor, sample) %>%
+  summarize(avgProb = mean(prob)) %>%
+  mutate(interaction = paste(ligand, receptor, sep = "->"))
+
+pog217_inter_controls <- rbind(
+  mutate(pog217_1_ccInter, sample = "POG217_Bx1"),
+  mutate(pog217_2_ccInter, sample = "POG217_Bx2")
+) %>%
+  dplyr::filter(ligand %in% c("HLA-A", "HLA-B"),
+                receptor == "CD8A") %>%
+  group_by(target, ligand, receptor, sample) %>%
+  summarize(avgProb = mean(prob)) %>%
+  mutate(interaction = paste(ligand, receptor, sep = "->"))
+
+ggplot(rbind(pog217_inter, pog217_inter_controls), aes(x = sample, y = interaction, colour = avgProb, size = avgProb)) +
+  geom_point() +
+  facet_grid(cols = vars(target)) +
+  theme_bw() +
+  theme(strip.text = element_text(angle = 90, size = 20),
+        axis.text = element_text(size = 20),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22)) + 
+  paletteer::scale_color_paletteer_c("grDevices::ag_Sunset") + 
+  labs(x = "Sample", y = "Interaction", colour = "Interaction\nProbability", size = "Interaction\nProbability")
+ggsave("UpdatedSet/pog217_ccImmunosupp.jpg", width = 9, height = 10)
+
+# I
+pog590 <- multiBiop_list[["POG590"]]
+DefaultAssay(pog590) <- 'chromvar'
+
+pog590_differential.activity <- FindMarkers(
+  object = pog590,
+  ident.1 = '1', # second biopsy
+  ident.2 = '3', # first biopsy
+  # only.pos = TRUE,
+  mean.fxn = rowMeans,
+  fc.name = "avg_diff",
+  min.pct = 0
+)
+
+motifGenes <- fread("/projects/marralab/cayan_prj/PrecisionMed/Data/motifID_geneName.tsv")
+pog590_differential.activity <- pog590_differential.activity %>%
+  rownames_to_column(var = "jaspar_matrix") %>%
+  inner_join(motifGenes)
+
+pog590_differential.activity_favoursB2 <- pog590_differential.activity %>%
+  dplyr::filter(avg_diff > 0) %>%
+  arrange(p_val_adj) %>%
+  rownames_to_column(var = "Rank") %>%
+  mutate(Rank = as.numeric(Rank),
+         logpval_adj = -log(p_val_adj))
+pog590_differential.activity_favoursB1 <- pog590_differential.activity %>%
+  dplyr::filter(avg_diff < 0) %>%
+  arrange(desc(p_val_adj)) %>%
+  rownames_to_column(var = "Rank") %>%
+  mutate(Rank = as.numeric(Rank) + max(as.numeric(pog590_differential.activity_favoursB2$Rank)),
+         logpval_adj = log(p_val_adj))
+
+# plotting
+pog590_differential.activity_fox <- rbind(pog590_differential.activity_favoursB2, pog590_differential.activity_favoursB1) %>%
+  dplyr::filter(grepl("FOX", gene_name, ignore.case = T))
+
+rbind(pog590_differential.activity_favoursB2, pog590_differential.activity_favoursB1) %>%
+  mutate(Significant = ifelse(p_val_adj <= 0.05, "Yes", "No")) %>%
+  ggplot(aes(x = Rank, y = logpval_adj, colour = Significant)) +
+  geom_point(alpha = 0.25) +
+  geom_point(data = pog590_differential.activity_fox,
+             aes(x = Rank, y = logpval_adj), colour = "#0A74B2") + 
+  geom_text_repel(data = dplyr::filter(pog590_differential.activity_fox, logpval_adj < 200),
+                  aes(x = Rank, y = logpval_adj, label = gene_name),
+                  colour = "black", max.overlaps = 50, point.padding = 0.1,
+                  min.segment.length = 1, box.padding = 0.15, size = 6) +
+  scale_color_manual(values = c("light grey", "black")) +
+  labs(x = "", y = "Log(Adj. P-value)", colour = "Significant") +
+  theme_linedraw() +
+  theme(legend.position = "top") +
+  scale_x_discrete(labels = NULL, breaks = NULL) +
+  theme(
+    axis.text       = element_text(size = 16),
+    axis.title      = element_text(size = 20),
+    legend.text     = element_text(size = 16),
+    legend.title    = element_text(size = 20),
+    title = element_text(size = 20)
+  )
+
+ggplot(data = dplyr::filter(pog590_differential.activity_fox, logpval_adj > 200), 
+       aes(x = Rank, y = logpval_adj)) +
+  geom_point(colour = "#0A74B2") +
+  geom_text_repel(aes(label = gene_name), colour = "black", max.overlaps = 50, point.padding = 0.1,
+                  min.segment.length = 1, box.padding = 0.25, size = 4) +
+  labs(x = "", y = "Log(Adj. P-value)", colour = "Significant") +
+  theme_linedraw() +
+  theme(legend.position = "top") +
+  theme(
+    axis.text       = element_text(size = 16),
+    axis.title      = element_text(size = 20),
+    legend.text     = element_text(size = 16),
+    legend.title    = element_text(size = 20),
+    title = element_text(size = 20)
+  ) +
+  scale_x_discrete(labels = NULL, breaks = NULL)
+ggsave("UpdatedSet/pog590_motifEnrichment_foxOnly.jpg", width = 5, height = 5)
+
+# J
+pog590_1_maligCells <- subset(pog590, sample == "POG590_1" & identity == "Malignant")
+DimPlot(pog590_1_maligCells, reduction = "rna.umap") # cluster 1 is the one that bridges into biopsy 2
+
+# scoring for FOX family TFs
+fox_ids <- rbind(pog590_differential.activity_favoursB2, pog590_differential.activity_favoursB1)  %>%
+  dplyr::filter(grepl("^fox", gene_name, ignore.case = T)) %>%
+  pull(jaspar_matrix)
+
+fox_score <- colMeans(pog590[["chromvar"]]$data[fox_ids,], na.rm = T)
+pog590$FOXMotifScore <- fox_score
+pog590_malig <- subset(pog590, identity == "Malignant")
+DimPlot(pog590_malig, reduction = "rna.umap")
+
+pog590_1_maligCells$Label <- ifelse(Idents(pog590_1_maligCells) == 1,
+                             ifelse(pog590_1_maligCells$sample == "POG590_1", "Biopsy 2-like", "Biopsy 2"),
+                             "Biopsy 1")
+DimPlot(pog590_malig, reduction = "rna.umap", group.by = "Label")
+umap <- as.data.frame(pog590_malig@reductions[["rna.umap"]]@cell.embeddings) %>%
+  mutate(Label = pog590_malig$Label)
+biop2_like <- dplyr::filter(umap, Label == "Biopsy 2-like")
+umap %>%
+  dplyr::filter(Label != "Biopsy 2-like") %>%
+  ggplot(aes(x = rnaumap_1, y = rnaumap_2, colour = Label)) +
+  geom_point(alpha = 0.5, size = 0.5) +
+  geom_point(data = biop2_like, aes(x = rnaumap_1, y = rnaumap_2), colour = "#0A74B2", size = 1) +
+  theme_classic() +
+  theme(legend.position = "top") +
+  theme(
+    axis.text       = element_text(size = 16),
+    axis.title      = element_text(size = 20),
+    legend.text     = element_text(size = 16),
+    legend.title    = element_text(size = 20),
+    title = element_text(size = 20)
+  ) +
+  xlim(-15, 0) +
+  # scale_colour_continuous(high = "#250efe", low = "grey") +
+  labs(x = "UMAP 1", y = "UMAP 2") +
+  scale_colour_jama()
+
+# K
+# setting up comparisons
+comp <- list(c("Biopsy 1", "Biopsy 2-like"), c("Biopsy 1", "Biopsy 2"), c("Biopsy 2-like", "Biopsy 2"))
+
+data.frame(Label = pog590_malig$Label, FOXScore = pog590_malig$FOXMotifScore) %>%
+  ggplot(aes(x = Label, y = FOXScore, fill = Label)) +
+  geom_violin() +
+  geom_boxplot(width = 0.075) +
+  xlab("") +
+  ylab("FOX TF Motif Score") +
+  stat_compare_means(comparisons = comp, method = "wilcox.test", label = "p.format") +
+  theme_minimal() +
+  scale_x_discrete(limits = c('Biopsy 1', 'Biopsy 2-like', 'Biopsy 2')) +
+  theme(
+    axis.text       = element_text(size = 16),
+    # axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+    axis.title      = element_text(size = 16),
+    legend.text     = element_text(size = 16),
+    legend.title    = element_text(size = 20),
+    title = element_text(size = 20)
+  ) +
+  scale_fill_manual(values = c("white", "white", "#0A74B2")) +
+  theme(legend.position="none")
+
+# Figure 5
+# A
+# from bulk RNA-seq
+allSamples_BulkComp_zScore <- fread("../../Data/bulkRNA_zScores.csv") %>%
+  dplyr::filter(hugo %in% relevant_genes,
+                grepl("percentile|FC|tpmZscore", metric),
+                !grepl("median", metric)) 
+
+# from analyses_targetComparisons.R
+geneExprComp_scRNA <- fread("../../Data/geneExprComp_scRNA_wscNormals_biopSite.csv") %>%
+  rbind(geneExprComp_scRNA_origin) %>%
+  dplyr::filter(!duplicated(cbind(sample, gene, cluster)))
+
+pog_scComp <- allSamples_BulkComp_zScore %>%
+  mutate(percentile = if_else(str_detect(metric, "percentile"),
+                              value,
+                              pnorm(z_score)*100)) %>%
+  group_by(Sample, hugo) %>%
+  dplyr::filter(percentile == max(percentile)) %>%
+  ungroup() %>%
+  dplyr::filter(!duplicated(cbind(Sample, hugo))) %>%
+  full_join(geneExprComp_scRNA, by = c("hugo" = "gene", "Sample" = "sample")) %>%
+  mutate(foundIn = ifelse(percentile >= 95,
+                          ifelse(fdr_prop <= 0.05, "Both", "Bulk"),
+                          ifelse(fdr_prop <= 0.05, "Single-cell", "Neither"))) %>%
+  dplyr::filter(foundIn != "Neither")
+
+pog_scComp %>%
+  dplyr::select(Sample, hugo, cluster, prop_mal, mean_mal, foundIn) %>%
+  dplyr::filter(!grepl("415", Sample)) %>%
+  left_join(idMapping, by = c("Sample" = "sample")) %>%
+  group_by(hugo) %>%
+  mutate(numClusts = n()) %>%
+  ggplot(aes(x = as.character(cluster), y = reorder(hugo, numClusts), shape = foundIn, colour = mean_mal, size = prop_mal)) +
+  geom_point() +
+  facet_grid(cols = vars(newID), scales = "free_x", space = "free_x") +
+  scale_size_continuous(limits = c(0,1)) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(x = "Cluster", y = "Gene", colour = "Mean\nExpression", size = "Proportion\nof Cells", shape = "Significant in") +
+  paletteer::scale_colour_paletteer_c("grDevices::Inferno") +
+  guides(shape = guide_legend(override.aes = list(size = 5))) +
+  theme(strip.text = element_text(size = 20, angle = 90),
+        axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22))
+ggsave("UpdatedSet/allGraphKBGenes.jpg", width = 30, height = 18)
+
+# bar plot of shared, sc, bulk across samples
+# across genes
+pog_scComp %>%
+  group_by(hugo) %>%
+  mutate(numClusts = n()) %>%
+  ggplot(aes(x = reorder(hugo, numClusts), fill = foundIn)) +
+  geom_bar(position = "stack") +
+  theme_minimal() +
+  theme(axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22)) +
+  scale_fill_brewer(palette = "Dark2")
+
+# across clusters
+pog_scComp %>%
+  dplyr::select(Sample, hugo, cluster, prop_mal, mean_mal, foundIn) %>%
+  dplyr::filter(!grepl("415", Sample)) %>%
+  ggplot(aes(x = cluster, fill = foundIn)) +
+  geom_bar(position = "stack") +
+  facet_grid(cols = vars(Sample), scales = "free_x", space = "free_x") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        axis.text = element_text(size = 16),
+        axis.title = element_text(size = 20),
+        legend.text = element_text(size = 16),
+        legend.title = element_text(size = 20)) +
+  scale_fill_brewer(palette = "Dark2")
+
+# B
+pog_scComp %>%
+  dplyr::filter(foundIn %in% c("Single-cell", "Both")) %>%
+  group_by(Sample) %>%
+  mutate(maxCluster = max(cluster) + 1) %>%
+  ungroup() %>%
+  group_by(Sample, hugo, maxCluster) %>%
+  summarize(numClusts = n()) %>%
+  ungroup() %>%
+  mutate(propPresent = numClusts / maxCluster) %>%
+  left_join(idMapping, by = c("Sample" = "sample")) %>%
+  ggplot(aes(x = newID, y = propPresent)) +
+  geom_boxplot() +
+  geom_jitter(alpha = 0.5) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        strip.text = element_text(size = 20),
+        axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22)) +
+  labs(y = "Proportion of Clusters", x = "Sample")
+
+# C
+pog1329 <- allSamples_list[["POG1329"]]
+pog1329$maligClusts <- seu$seurat_clusters
+pog1329$maligClusts <- as.character(pog1329$maligClusts)
+pog1329$maligClusts[is.na(pog1329$maligClusts)] <- "Non-malignant"
+DimPlot(pog1329, reduction = "rna.umap", group.by = "maligClusts") +
+  ggtitle("POG1329 Malignant Clusters") +
+  labs(x = "UMAP 1", y = "UMAP 2") +
+  paletteer::scale_color_paletteer_d("lisa::PabloPicasso_1") +
+  theme(axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22),
+        legend.position = "bottom") +
+  guides(colour = guide_legend(nrow=2, override.aes = list(size = 5)))
+
+# D
+FeaturePlot(pog1329, reduction = "rna.umap", features = "CD274") +
+  ggtitle("POG1329 CD274 Expression") +
+  labs(x = "UMAP 1", y = "UMAP 2") +
+  theme(axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22),
+        legend.position = "bottom")
+ # E
+ pog_scComp %>% 
+  dplyr::filter(!duplicated(cbind(Sample, hugo))) %>%
+  group_by(hugo) %>%
+  ggplot(aes(x = prop_mal, y = percentile, shape = foundIn, colour = foundIn)) +
+  geom_point(alpha = 0.5, size = 2) +
+  theme_bw() +
+  scale_colour_brewer(palette = "Dark2") +
+  theme(strip.text = element_text(size = 20),
+        axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22),
+        legend.position = "bottom") +
+  guides(colour=guide_legend(nrow=2,byrow=TRUE)) +
+  labs(colour = "Significant in", shape = "Significant in", y = "Bulk Expression Percentile", x = "Proportion of Cells")
+
+ # F
+toPlot <- data.frame(RAF1 = allSamples_merged[["RNA"]]$data["RAF1",],
+                    id = allSamples_merged$identity,
+                    sample = allSamples_merged$sample) %>%
+  mutate(category = ifelse(id == "Malignant", "Malignant", "Normal")) 
+stat <- glmmTMB(RAF1 ~ category + sample, data = toPlot)
+modelSumm <- coef(summary(stat))$cond
+
+comp <- list(c("Malignant", "Normal"))
+toPlot %>%
+  dplyr::filter(sample %in% dplyr::filter(pog_scComp, hugo == "RAF1", prop_mal > prop_norm, foundIn %in% c("Single-cell", "Both"))$Sample) %>%
+  group_by(sample, category) %>%
+  summarize(prev = sum(RAF1 > 0) / n(),
+            meanExpr = mean(RAF1)) %>%
+  ungroup() %>%
+  inner_join(idMapping, by = "sample") %>%
+  # pivot_longer(cols = c(prev, meanExpr), names_to = "metric", values_to = "values") %>%
+  # mutate(metric = ifelse(metric == "prev", "Proportion of Cells", "Mean Expression")) %>%
+  ggplot(aes(x = category, y = prev)) +
+  geom_boxplot() +
+  geom_point(aes(colour = newID), size = 2, alpha = 1) +
+  geom_line(aes(group = newID, color = newID)) +
+  stat_compare_means(comparisons = comp, method = "wilcox.test",
+                     label = "p.format", size = 5) +
+  # geom_line(linewidth = 0.8, alpha = 0.5) +
+  # facet_wrap(~metric, scales = "free") +
+  theme_bw() +
+  theme(strip.text = element_text(size = 20),
+        axis.text = element_text(size = 20),
+        axis.title = element_text(size = 22),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 22)) +
+  labs(x = "Cell Type", y = "Proportion of Cells Expressing RAF1", colour = "Sample")
