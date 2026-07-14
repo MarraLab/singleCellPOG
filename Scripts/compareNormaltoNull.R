@@ -16,22 +16,32 @@ for(f in files){
 }
 selfSNVScores <- Reduce(rbind, selfSNVScores)
 
-mergedSNVScores <- inner_join(nullSNVScores, selfSNVScores, by = c("barcode", "sample"))
+mergedSNVScores <- inner_join(nullSNVScores, selfSNVScores, by = c("barcode", "sample")) %>%
+  dplyr::filter(mutscore.y <= 1, mutscore.x <= 1)
 
 # distribution of SNV scores for normal cells
 # cell types
 cellTypes <- data.frame(
   barcode = colnames(allSamples_merged),
   cellType = allSamples_merged$identity
-)
+) 
+
+# number of normal cells with SNV score over 0
+mergedSNVScores %>%
+  inner_join(cellTypes, by = "barcode") %>%
+  dplyr::filter(cellType != "Malignant", mutscore.y - mutscore.x > 0) %>%
+  nrow()
 
 # distribution 
 mergedSNVScores %>%
-  dplyr::filter(mutscore.y <= 1, mutscore.x <= 1) %>%
   inner_join(cellTypes, by = "barcode") %>%
   dplyr::filter(cellType != "Malignant") %>% 
-  ggplot(aes(x = mutscore.y - mutscore.x)) +
-  geom_histogram(binwidth = 0.01)
+  ggplot(aes(x = mutscore.y)) +
+  geom_histogram(binwidth = 0.01) +
+  theme_bw() +
+  ggtitle("Distribution of SNV scores for\nnon-malignant cells") +
+  labs(x = "SNV score", y = "Number of cells")
+ggsave("../../Figures/POGPaperFigures/UpdatedSet/snvScore_nonMalig.jpg", width = 4, height = 3)
 
 # effect size
 df <- mergedSNVScores %>%

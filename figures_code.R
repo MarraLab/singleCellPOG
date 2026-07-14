@@ -439,6 +439,127 @@ getCNVProp <- function(mb, cnv){
     summarize(propGain = sum(cnvStatus) / n())
 }
 
+# I-N
+plotPeaks <- function(mb, cnv){
+  seu <- multiBiop_list[[mb]]
+  seu <- RenameCells(seu, new.names = paste(sapply(colnames(seu), function(x) convert_rna_indices(str_split(x, "_")[[1]][1])),
+                                            seu$sample,
+                                            sep = "_"))
+
+  seu_malig <- subset(seu, identity == "Malignant")
+  peaks <- data.frame(
+    peak = rownames(seu_malig, "PEAKS")
+  ) %>%
+      separate(col = "peak", into = c("chr", "start", "end"), sep = "-")
+  peaks$start <- as.numeric(peaks$start)
+  peaks$end <- as.numeric(peaks$end)
+
+  # create granges obj
+  peaks_granges <- GRanges(
+      seqnames = peaks$chr,
+      ranges = IRanges(start = peaks$start, end = peaks$end)
+  )
+
+  annotated <- annotate_regions(
+      regions = peaks_granges,
+      annotations = annotations
+  ) %>%
+      as.data.frame() %>%
+      dplyr::filter(!duplicated(cbind(seqnames, start, end)),
+                    annot.symbol == cnv) %>%
+      unite(col = "peakID", seqnames, start, end,  sep = "-")
+
+  # group by biopsy and amplification status
+  cnvObj <- multiBiopCNV_list[[mb]]
+  cnvOI <- cnvObj@expr.data[cnv,] %>%
+    as.data.frame()
+  colnames(cnvOI) <- c(cnv)
+  med <- median(cnvObj@expr.data[cnv,])
+
+  seu_malig <- AddMetaData(seu_malig, cnvOI)
+  seu_malig$cnvStatus <- ifelse(seu_malig[[]][,cnv] > med, "Amplified", "Not Amplified")
+  seu_malig$group <- paste(seu_malig$sample, seu_malig$cnvStatus)
+
+  Idents(seu_malig) <- "group"
+  Idents(seu_malig) <- factor(Idents(seu_malig), levels = sort(levels(Idents(seu_malig))))
+
+  # Figures 3I-K
+  CoveragePlot(
+    object = seu_malig,
+    assay = "PEAKS",
+    region = cnv,
+    extend.upstream = 2000,
+    extend.downstream = 2000
+  )
+  ggsave(paste0("UpdatedSet/", mb, "_", cnv, "Peaks.svg"), width = 6, height = 4)
+
+  # subsetting for peaks of interest
+  seuCNVSub <- seu_malig
+  seuCNVSub[["PEAKS"]] <- subset(
+    seu_malig[["PEAKS"]],
+    features = annotated$peakID
+  )
+
+  # statistical comparisons for peak height
+  cts <- levels(Idents(seuCNVSub))
+  pairs <- combn(cts, 2, simplify = FALSE)
+
+  da.list <- lapply(pairs, function(x) {
+    FindMarkers(
+      seuCNVSub,
+      assay = "PEAKS",
+      ident.1 = x[1],
+      ident.2 = x[2],
+      test.use = "LR",
+      latent.vars = "nCount_PEAKS"
+    ) %>%
+      mutate(comparison = paste(x[1], x[2], sep = "vs"))
+  }) 
+  daOut <- Reduce(rbind, da.list) %>%
+    dplyr::filter(p_val_adj <= 0.05)
+
+  # gene expression
+  seu <- AddMetaData(seu, cnvOI)
+  seu$cnvStatus <- ifelse(seu[[]][,cnv] > med, "Gain", "No Gain")
+  seu$group <- ifelse(seu$identity == "Malignant", paste("Malignant", seu$cnvStatus), "Normal")
+
+  comp <- list(c("Malignant Gain", "Malignant No Gain"), c("Malignant Gain", "Normal"), c("Normal", "Malignant No Gain"))
+  toPlot <- data.frame(
+    expr = seu[["RNA"]]@data[cnv,],
+    sample = seu$sample,
+    category = seu$group
+  ) %>%
+  drop_na()
+
+  # Figures 3L-N
+  ggplot(toPlot, aes(x = category, y = expr)) +
+    geom_violin(scale = "width") +
+    geom_boxplot(width = 0.1) +
+    stat_compare_means(comparisons = comp, method = "wilcox.test", label = "p.signif", vjust = 0.5) +
+    theme_bw() +
+    facet_wrap(~sample) +
+    theme(
+      strip.text = element_text(size = 12),
+      axis.text       = element_text(size = 12),
+      axis.text.x = element_text(angle = 45, vjust = 0.5),
+      axis.title      = element_text(size = 14)
+    ) +
+    labs(x = "Category", y = paste(cnv, "Gene Expression")) 
+  ggsave(paste0("UpdatedSet/", mb, "_", cnv, "_geneExpr.jpg"), width = 5, height = 4)
+
+  return(daOut)
+}
+
+inputDF <- data.frame(
+  mb = c("POG217", "POG415", "POG590"),
+  cnv = c("MYC", "MET", "ARAF") 
+)
+
+signifPeaks_list <- list()
+for(i in seq(1, nrow(inputDF))){
+  signifPeaks_list[[i]] <- plotPeaks(inputDF$mb[i], inputDF$cnv[i])
+}
+
 # Figure 4
 # A
 # recoding treatment response
@@ -790,7 +911,7 @@ pog590_differential.activity <- FindMarkers(
   min.pct = 0
 )
 
-motifGenes <- fread("Data/motifID_geneName.tsv")
+motifGenes <- fread("../Data/motifID_geneName.tsv")
 pog590_differential.activity <- pog590_differential.activity %>%
   rownames_to_column(var = "jaspar_matrix") %>%
   inner_join(motifGenes)
@@ -867,8 +988,8 @@ pog590$FOXMotifScore <- fox_score
 pog590_malig <- subset(pog590, identity == "Malignant")
 DimPlot(pog590_malig, reduction = "rna.umap")
 
-pog590_1_maligCells$Label <- ifelse(Idents(pog590_1_maligCells) == 1,
-                             ifelse(pog590_1_maligCells$sample == "POG590_1", "Biopsy 2-like", "Biopsy 2"),
+pog590_malig$Label <- ifelse(Idents(pog590_malig) == 1,
+                             ifelse(pog590_malig$sample == "POG590_1", "Biopsy 2-like", "Biopsy 2"),
                              "Biopsy 1")
 DimPlot(pog590_malig, reduction = "rna.umap", group.by = "Label")
 umap <- as.data.frame(pog590_malig@reductions[["rna.umap"]]@cell.embeddings) %>%
@@ -903,12 +1024,12 @@ data.frame(Label = pog590_malig$Label, FOXScore = pog590_malig$FOXMotifScore) %>
   geom_boxplot(width = 0.075) +
   xlab("") +
   ylab("FOX TF Motif Score") +
-  stat_compare_means(comparisons = comp, method = "wilcox.test", label = "p.format") +
+  stat_compare_means(comparisons = comp, method = "wilcox.test", label = "p.format", vjust = 0.25) +
   theme_minimal() +
   scale_x_discrete(limits = c('Biopsy 1', 'Biopsy 2-like', 'Biopsy 2')) +
   theme(
     axis.text       = element_text(size = 16),
-    # axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
     axis.title      = element_text(size = 16),
     legend.text     = element_text(size = 16),
     legend.title    = element_text(size = 20),
@@ -916,6 +1037,26 @@ data.frame(Label = pog590_malig$Label, FOXScore = pog590_malig$FOXMotifScore) %>
   ) +
   scale_fill_manual(values = c("white", "white", "#0A74B2")) +
   theme(legend.position="none")
+
+# L
+# gene set enrichment analysis
+pog590_malig <- GeneSetAnalysis(pog590_malig, genesets = hall50$human)
+hm50 <- c("myc_targets_v1")
+hmIndices <- which(grepl(paste(hm50, collapse = "|"),
+                          rownames(pog590_malig@misc$AUCell$genesets),
+                         ignore.case = T))
+
+matr <- pog590_malig@misc$AUCell$genesets[hmIndices,] %>% as.matrix()
+# stats <- CalcStats(matr, f = pog003_2biop$seurat_clusters)
+Heatmap(CalcStats(matr, f = pog590_malig$Label, method = "mean", t = T)) +
+  theme(strip.text = element_text(size = 20),
+        axis.text = element_text(size = 12),
+        axis.text.x = element_text(angle = 0),
+        axis.title = element_text(size = 14),
+        legend.text = element_text(size = 12),
+        legend.title = element_text(size = 14)) + 
+  labs(x = "Cluster", fill = "Mean") +
+  coord_flip()
 
 # Figure 5
 # A

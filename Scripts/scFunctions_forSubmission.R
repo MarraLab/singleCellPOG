@@ -46,6 +46,7 @@ library(aricode)
 path <- "PATH"
 files <- list.files(path)
 patient_ids <- paste0("POG", c("003", "130", "217", "415", "590", "643", "1128", "1329", "147", "196", "318", "326", "609", "650", "716", "732", "785"))
+files <- files[grepl(paste(patient_ids, collapse = "|"), files)]
 
 # converting between ATAC and RNA barcodes
 atac_barcodes <- fread("PATH/cellranger-arc-2.0.2/lib/python/atac/barcodes/737K-arc-v1.txt.gz",
@@ -199,3 +200,12 @@ snv_count <- function(cbsniffer_path){
   
   return(mut_bc)
 }
+
+# get annotations
+annotations <- build_annotations(
+    genome = "hg38",
+    annotations = c(
+        "hg38_basicgenes",
+        "hg38_genes_intergenic"
+    )
+)
