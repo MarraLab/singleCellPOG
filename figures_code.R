@@ -1,43 +1,4 @@
-# libraries
-library(tidyverse)
-library(data.table)
-library(Matrix)
-library(Seurat)
-library(Signac)
-library(scater)
-library(scRNAseq)
-library(scran)
-library(EnsDb.Hsapiens.v86)
-library(pheatmap)
-library(TxDb.Hsapiens.UCSC.hg38.knownGene)
-library(ensembldb)
-library(biomaRt)
-library(motifmatchr)
-library(JASPAR2020)
-library(TFBSTools)
-library(BSgenome.Hsapiens.UCSC.hg38)
-library(scDblFinder)
-library(infercnv)
-library(harmony)
-library(ggpubr)
-library(ggsci)
-library(RColorBrewer)
-library(ggrepel)
-library(SeuratWrappers)
-library(SeuratExtend)
-library(CellChat)
-library(viridis)
-library(slingshot)
-library(glmmTMB)
-library(httpgd)
-library(qs2)
-library(ggalluvial)
-library(ggsankey)
-library(circlize)
-library(RColorBrewer)
-library(paletteer)
-library(glmmTMB)
-library(org.Hs.eg.db)
+source("scFunctions_forSubmission.R")
 
 # Figure 1
 # A
@@ -180,6 +141,7 @@ cd8_comp %>%
   guides(fill=guide_legend(nrow=3,byrow=TRUE))
 
 # C
+seu <- pog1329
 seu$CD8_pos <- seu[["RNA"]]$data["CD8A",] > 0 | seu[["RNA"]]$data["CD8B",] > 0
 seu$CD4_pos <- seu[["RNA"]]$data["CD4",] > 0
 seu$doublePos <- seu$CD8_pos & seu$CD4_pos & seu$identity == "NK/T"
@@ -304,202 +266,6 @@ data.frame(
   labs(x = "Sample", y = "SNV Score for Latest Bx")
 
 # C
-# identify CNVs called by ploidetect in later biopsies that are not present in earlier ones
-genes <- read_tsv("../../Data/gencode_v21_gen_pos.complete.txt", 
-                  col_names = c("gene_symbol", "chr", "start", "end")) %>%
-          mutate(chr = gsub("chr", "", chr))
-gr_genes <- GRanges(seqnames = genes$chr,
-                      ranges = IRanges(start = genes$start, end = genes$end),
-                      gene_symbol = genes$gene_symbol)
-
-compare_cnv_with_genes <- function(file1, file2) { 
-  # Read CNV files
-  cnv1 <- read_tsv(paste0(file1, "/cna.txt"), col_types = cols())
-  cnv2 <- read_tsv(paste0(file2, "/cna.txt"), col_types = cols())
-  
-  # Create GRanges objects for CNVs
-  gr1 <- GRanges(seqnames = cnv1$chr,
-                 ranges = IRanges(start = cnv1$pos, end = cnv1$end), strand = "*")
-  
-  gr2 <- GRanges(seqnames = cnv2$chr,
-                 ranges = IRanges(start = cnv2$pos, end = cnv2$end), strand = "*")
-  
-  # Find non-overlapping CNVs in sample2
-  overlaps <- findOverlaps(gr2, gr1)
-  # non_overlapping_indices <- setdiff(seq_along(gr2), queryHits(overlaps))
-  # non_overlapping_cnvs <- cnv2[non_overlapping_indices, ]
-  # non_overlapping_cnvs$size <- non_overlapping_cnvs$end - non_overlapping_cnvs$pos
-  # filtered_cnvs <- non_overlapping_cnvs[non_overlapping_cnvs$size > threshold, ]
-  
-
-  # Compare CN values for overlapping regions
-  cnv_diff <- data.frame(
-    sample2_index = queryHits(overlaps),
-    sample1_index = subjectHits(overlaps),
-    chr = as.character(seqnames(gr2[queryHits(overlaps)])),
-    start = start(gr2[queryHits(overlaps)]),
-    end = end(gr2[queryHits(overlaps)]),
-    CN_sample2 = cnv2$CN[queryHits(overlaps)],
-    CN_sample1 = cnv1$CN[subjectHits(overlaps)]
-  ) %>%
-    mutate(size = end - start,
-           CN_diff = CN_sample2 - CN_sample1,
-           change = case_when(
-             CN_diff > 0 ~ "gain",
-             CN_diff < 0 ~ "loss",
-             TRUE ~ "no_change"
-           )) %>%
-    dplyr::filter(change != "no_change")
-
-
-  # Create GRanges for filtered CNVs
-  # gr_filtered <- GRanges(seqnames = filtered_cnvs$chr,
-  #                        ranges = IRanges(start = filtered_cnvs$pos, end = filtered_cnvs$end))
-  
-  # Create GRanges for filtered CNV differences
-  gr_diff <- GRanges(seqnames = cnv_diff$chr,
-                     ranges = IRanges(start = cnv_diff$start, end = cnv_diff$end))
-
-  # Find genes fully contained in CNV regions
-  gene_hits <- findOverlaps(gr_genes, gr_diff)
-  matched_genes <- genes[queryHits(gene_hits), ]
-  matched_genes$cnv_index <- subjectHits(gene_hits)
-  
-
-  # Combine CNV differences with gene annotations
-  cnv_diff$cnv_index <- seq_len(nrow(cnv_diff))
-  result <- left_join(cnv_diff, matched_genes, by = "cnv_index") %>%
-    dplyr::select(-cnv_index)
-  
-  return(result)
-}
-
-cnvComp_list <- list()
-for(i in seq(1, length(multiBiop_list))){
-  mb <- names(multiBiop_list)[i]
-  mbs <- files[grepl(mb, files)]
-
-  comb <- combn(mbs, 2, simplify = FALSE)
-  for(i in seq(1, length(comb))){
-    file1 <- wholeCohort[[which(wholeCohort$folder_name == comb[[i]][1]), "pd_path"]]
-    file2 <- wholeCohort[[which(wholeCohort$folder_name == comb[[i]][2]), "pd_path"]]
-
-    index <- paste(comb[[i]][1], comb[[i]][2], sep = ".")
-
-    cnvComp_list[[index]] <- compare_cnv_with_genes(file1, file2)
-  }
-}
-
-# for CNVs also detected in sc second biop, determine what percentage of first biop malig cells also contain it
-# Function to calculate directional CNV percentage
-directional_cnv_percent <- function(matrix, gene, direction) {
-  if (!(gene %in% colnames(matrix))) return(NA)
-  values <- matrix[,gene]
-  neutral <- median(matrix, na.rm = T)
-  if (direction == "gain") {
-    return(mean(values > neutral, na.rm = TRUE) * 100)
-  } else if (direction == "loss") {
-    return(mean(values < neutral, na.rm = TRUE) * 100)
-  } else {
-    return(NA)
-  }
-}
-
-compare_cnv_in_cells_directional <- function(cnv_list, cnv_matrix) {
-  # Filter CNV list for valid genes and directions
-  cnv_list <- cnv_list %>%
-    dplyr::filter(!is.na(gene_symbol), change %in% c("gain", "loss")) %>%
-    dplyr::filter(gene_symbol %in% colnames(cnv_matrix),
-                  !duplicated(gene_symbol))
-  
-  # Extract biopsy labels from cell names
-  biopsy_labels <- sapply(rownames(cnv_matrix), function(x) strsplit(x, "_")[[1]][3])
-  biopsy1_cells <- cnv_matrix[biopsy_labels == min(biopsy_labels), , drop = FALSE]
-  biopsy2_cells <- cnv_matrix[biopsy_labels == max(biopsy_labels), , drop = FALSE]
-  
-  # Neutral baseline (median CN across all cells)
-  neutral <- median(as.matrix(cnv_matrix), na.rm = TRUE)
-  
-  # Match CNV genes to matrix columns
-  gene_idx <- match(cnv_list$gene_symbol, colnames(cnv_matrix))
-  
-  # Vectorized computation
-  biopsy1_percent <- numeric(length(gene_idx))
-  biopsy2_percent <- numeric(length(gene_idx))
-  biopsy1_ploidy <- numeric(length(gene_idx))
-  biopsy2_ploidy <- numeric(length(gene_idx))
-  
-  for (i in seq_along(gene_idx)) {
-    idx <- gene_idx[i]
-    if (is.na(idx)) {
-      biopsy1_percent[i] <- NA
-      biopsy2_percent[i] <- NA
-      biopsy1_ploidy[i] <- NA
-      biopsy2_ploidy[i] <- NA
-      next
-    }
-    
-    dir <- cnv_list$change[i]
-    
-    # Masks for gain/loss
-    if (dir == "gain") {
-      mask_b1 <- biopsy1_cells[, idx] > neutral
-      mask_b2 <- biopsy2_cells[, idx] > neutral
-    } else {
-      mask_b1 <- biopsy1_cells[, idx] < neutral
-      mask_b2 <- biopsy2_cells[, idx] < neutral
-    }
-    
-    # Percent of cells
-    biopsy1_percent[i] <- mean(mask_b1, na.rm = TRUE) * 100
-    biopsy2_percent[i] <- mean(mask_b2, na.rm = TRUE) * 100
-    
-    # Average ploidy among cells with gain/loss
-    biopsy1_ploidy[i] <- if (any(mask_b1, na.rm = TRUE)) mean(biopsy1_cells[mask_b1, idx], na.rm = TRUE) else NA
-    biopsy2_ploidy[i] <- if (any(mask_b2, na.rm = TRUE)) mean(biopsy2_cells[mask_b2, idx], na.rm = TRUE) else NA
-  }
-  
-  # Combine results
-  result <- cnv_list %>%
-    mutate(biopsy1_percent = biopsy1_percent,
-           biopsy2_percent = biopsy2_percent,
-           biopsy1_ploidy = biopsy1_ploidy,
-           biopsy2_ploidy = biopsy2_ploidy)
-  
-  return(result)
-}
-
-cnvComp_propCells_list <- list()
-for(i in seq(1, length(multiBiop_list))){
-  mb <- names(multiBiop_list)[i]
-  mbs <- files[grepl(mb, files)]
-
-  seu <- multiBiop_list[[mb]]
-  seu <- AddMetaData(seu, allSamples_merged[[]])
-  seu_malig <- subset(seu, identity == "Malignant")
-
-  maligCellNames <- paste(sapply(colnames(seu_malig), function(x) convert_rna_indices(str_split(x, "_")[[1]][1])),
-                          seu_malig$sample,
-                          sep = "_")
-
-
-  cnvObj <- multiBiopCNV_list[[mb]]
-  cnv_mat <- t(cnvObj@expr.data)
-
-  comb <- combn(mbs, 2, simplify = FALSE)
-  for(i in seq(1, length(comb))){
-    index <- paste(comb[[i]][1], comb[[i]][2], sep = ".")
-    cnv_list <- cnvComp_list[[index]]
-
-    cells <- intersect(which(rownames(cnv_mat) %in% maligCellNames), 
-                       which(grepl(paste(comb[[i]], collapse = "|"), rownames(cnv_mat))))
-    cnv_matrix <- cnv_mat[cells,]
-    cnvComp_propCells_list[[index]] <- compare_cnv_in_cells_directional(cnv_list, cnv_matrix) %>%
-      mutate(pair = index)
-  }
-}
-cnvComp_propCells <- Reduce(rbind, cnvComp_propCells_list)
-
 cnvComp_propCells %>%
   dplyr::filter(CN_sample1 == 2) %>% # filter for neutral CNVs
   mutate(diff = biopsy2_percent - biopsy1_percent) %>%
@@ -676,7 +442,7 @@ getCNVProp <- function(mb, cnv){
 # Figure 4
 # A
 # recoding treatment response
-tx_history <- fread("/projects/POG/Clinical_Actions/Oasis_data/20231204_merge_20221014/drug_treatment.tab") %>%
+tx_history <- fread("PATH/drug_treatment.tab") %>%
   dplyr::filter(patient_id %in% multiBiop_ids,
                 pog_informed != "N") %>% 
   mutate(patient_id = str_replace(patient_id, " ", ""),
@@ -1024,7 +790,7 @@ pog590_differential.activity <- FindMarkers(
   min.pct = 0
 )
 
-motifGenes <- fread("/projects/marralab/cayan_prj/PrecisionMed/Data/motifID_geneName.tsv")
+motifGenes <- fread("Data/motifID_geneName.tsv")
 pog590_differential.activity <- pog590_differential.activity %>%
   rownames_to_column(var = "jaspar_matrix") %>%
   inner_join(motifGenes)
@@ -1154,13 +920,21 @@ data.frame(Label = pog590_malig$Label, FOXScore = pog590_malig$FOXMotifScore) %>
 # Figure 5
 # A
 # from bulk RNA-seq
-allSamples_BulkComp_zScore <- fread("../../Data/bulkRNA_zScores.csv") %>%
+relevant_gkb <- graphkb %>%
+  dplyr::filter(expression_type == "increased",
+                relevance %in% relevance_reTreatment,
+                !duplicated(gene))
+relevant_genes <- relevant_gkb %>%
+  pull(gene) %>%
+  unique()
+
+allSamples_BulkComp_zScore <- fread("PATH/bulkRNA_zScores.csv") %>%
   dplyr::filter(hugo %in% relevant_genes,
                 grepl("percentile|FC|tpmZscore", metric),
                 !grepl("median", metric)) 
 
 # from analyses_targetComparisons.R
-geneExprComp_scRNA <- fread("../../Data/geneExprComp_scRNA_wscNormals_biopSite.csv") %>%
+geneExprComp_scRNA <- fread("Data/geneExprComp_scRNA_wscNormals_biopSite.csv") %>%
   rbind(geneExprComp_scRNA_origin) %>%
   dplyr::filter(!duplicated(cbind(sample, gene, cluster)))
 

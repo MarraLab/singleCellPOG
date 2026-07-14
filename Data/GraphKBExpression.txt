@@ -1,0 +1,576 @@
+expression_type	gene	relevance	subject	disease_names	variant	X.rid	evidence	evidenceLevel	source.name	sourceId	createdBy	reviewStatus
+increased	CCND1	favours diagnosis	breast cancer [DOID:1612]	breast cancer	overexpression	#153:10	pmid:15961768	CIViC B4	civic	221	#29:0	not required
+increased	IGF2	recurrent	adrenocortical carcinoma [DOID:3948]	adrenocortical carcinoma	increased RNA expression	#153:741	pmid:18854392	NA	iprkb	6ecdb95f-fdb1-4d00-bb2c-e51498bb407a	#29:0	pending
+increased	SLC29A1	sensitivity	gemcitabine [DB00441]	pancreatic adenocarcinoma	increased RNA expression	#153:771	pmid:25024604	NA	iprkb	81a100ac-36a9-45d5-bb62-4b549598cdbd	#29:0	pending
+increased	CLDN4	sensitivity	cpe therapy	breast cancer	increased RNA expression	#153:805	pmid:15111309	NA	iprkb	0f1debcf-e02f-43ec-9e58-35b5bb8f10c2	#29:0	pending
+reduced	MLH1	resistance	cisplatin [DB00515]	ovarian cancer	reduced RNA expression	#153:833	pmid:10327053	NA	iprkb	eac4fc66-cd56-4e67-93d8-d3ef2920ca4f	#29:0	pending
+increased	GZMA	favourable prognosis	patient	urinary bladder cancer	increased RNA expression	#153:835	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	head and neck cancer	increased RNA expression	#153:836	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PDCD1LG2	sensitivity	ipilimumab [DB06186]	melanoma	increased RNA expression	#153:842	pmid:26359337	NA	iprkb	d0362e6c-d746-4de7-97c0-16d579434532	#29:0	pending
+increased	PDCD1	response	pembrolizumab [DB09037]	melanoma	increased protein expression	#153:843	pmid:25428505	NA	iprkb	4f63352e-a852-41bd-93c1-2386cbe6d804	#29:0	pending
+increased	CD8A	favourable prognosis	patient	colorectal cancer	increased RNA expression	#153:846	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	CXCL13	favourable prognosis	patient	colorectal cancer	increased RNA expression	#153:847	pmid:24138885	NA	iprkb	ee8cf40b-eb80-4f67-b7fb-af572522ee31	#29:0	pending
+increased	IFNG	favourable prognosis	patient	renal cell carcinoma	increased protein expression	#153:850	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	PDCD1LG2	sensitivity	nivolumab [DB09035]	melanoma	increased RNA expression	#153:851	pmid:27757299	NA	iprkb	5f70ec55-bf4a-4ac4-add3-5ea0f8837f8e	#29:0	pending
+increased	DSG3	prognostic indicator	patient	pancreatic ductal adenocarcinoma	increased protein expression	#153:861	pmid:26469831	NA	pubmed	ed889c30-e7b5-44f7-9825-aec2b901bfc9	#29:0	passed
+increased	MDK	resistance	doxorubicin [DB00997]	cervical cancer	increased RNA expression	#153:868	pmid:16644108	NA	iprkb	e19baf49-ceeb-4a8d-a49b-f43d7ab424d4	#29:0	pending
+reduced	PTEN	reduced function	PTEN	breast cancer	reduced RNA expression	#153:873	pmid:18332865	NA	iprkb	6bd93397-cd8e-4392-a381-ae8867cc030f	#29:0	pending
+reduced	CYLD	reduced function	CYLD	NA	reduced RNA expression	#153:1195	pmid:24398777	NA	iprkb	05863cff-1881-4ae5-a917-05f5c085fd22	#29:0	pending
+increased	TUBB3	resistance	paclitaxel [DB01229]	bladder cancer	overexpression	#153:1642	pmid:23184177	CGI Pre-clinical	cancer genome interpreter	6b3578369d400e9951bddef5201e55e3	#29:0	NA
+reduced	PBRM1	response	everolimus [DB01590]	renal cancer	underexpression	#153:1646	pmid:25997916	CGI Pre-clinical	cancer genome interpreter	99521b35e75e1f7092f2abe7ac6943c9	#29:0	NA
+increased	ERBB2	response	trastuzumab [DB00072]	stomach cancer	overexpression	#153:1653	NA	CGI FDA guidelines	cancer genome interpreter	3aa4a0b1c1a5c2769944f683f510a527	#29:0	NA
+increased	IGF1R	recurrent	adrenocortical carcinoma [DOID:3948]	adrenocortical carcinoma	increased RNA expression	#153:3103	pmid:18854392	NA	iprkb	6ecdb95f-fdb1-4d00-bb2c-e51498bb407a	#29:0	pending
+increased	IGF2	recurrent	liver carcinoma [DOID:686]	liver carcinoma	increased RNA expression	#153:3133	pmid:25089899	NA	iprkb	33ff2ac4-02b1-4637-b336-6b34ab370c09	#29:0	pending
+increased	ERBB2	sensitivity	lapatinib + trastuzumab [DB00072 + DB01259]	breast cancer	increased RNA expression	#153:3145	pmid:22493419	NA	iprkb	808bbdb4-21e5-47ba-a00d-784a14409205	#29:0	pending
+increased	CLDN3	response	cpe therapy	ovarian cancer	increased RNA expression	#153:3167	pmid:15899825	NA	iprkb	1966d380-eddf-4f22-960c-67045a88b5b2	#29:0	pending
+reduced	CDKN2A	sensitivity	pd 0332991	renal cell carcinoma	reduced RNA expression	#153:3171	pmid:23898052	NA	iprkb	f6461ab7-db92-43e9-bf0d-cb265b88ec0f	#29:0	pending
+reduced	RBBP8	sensitivity	mitomycin c	NA	reduced RNA expression	#153:3188	pmid:23144634	NA	iprkb	7ca843ca-de90-44aa-92a9-f6175be2411b	#29:0	pending
+reduced	MUS81	sensitivity	cisplatin [DB00515]	ovarian serous carcinoma	reduced RNA expression	#153:3189	pmid:27255997	NA	iprkb	5e1a9b50-9e07-43c2-b37d-9bfaabd61514	#29:0	pending
+increased	GZMA	favourable prognosis	patient	breast cancer	increased RNA expression	#153:3197	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	uterine cancer	increased RNA expression	#153:3198	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+reduced	USP11	sensitivity	olaparib (parp inhibitor)	NA	reduced RNA expression	#153:3200	pmid:20233726	NA	iprkb	9277ffd5-c8ad-405f-aeb1-6fdfd77499d1	#29:0	pending
+increased	CD274	response	pembrolizumab [DB09037]	melanoma	increased protein expression	#153:3205	pmid:25428505	NA	iprkb	4f63352e-a852-41bd-93c1-2386cbe6d804	#29:0	pending
+increased	CD274	response	pembrolizumab [DB09037]	non-small cell lung carcinoma	increased protein expression	#153:3207	pmid:25891174	NA	iprkb	c26e153d-b65a-4491-b501-d71da73fb2a3	#29:0	pending
+increased	CD8A	favourable prognosis	patient	brain cancer	increased RNA expression	#153:3208	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	CXCR5	favourable prognosis	patient	colorectal cancer	increased RNA expression	#153:3209	pmid:24138885	NA	iprkb	ee8cf40b-eb80-4f67-b7fb-af572522ee31	#29:0	pending
+increased	IFNG	favourable prognosis	patient	prostate adenocarcinoma	increased protein expression	#153:3212	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	CDK4	sensitivity	palbociclib [DB09073]	sarcoma	increased RNA expression	#153:3221	pmid:26528855	NA	iprkb	9d7ea9a8-270b-4255-a1e3-7827fb8e1cc8	#29:0	pending
+increased	MDK	resistance	cisplatin [DB00515]	stomach cancer	increased RNA expression	#153:3230	pmid:16644108	NA	iprkb	e19baf49-ceeb-4a8d-a49b-f43d7ab424d4	#29:0	pending
+reduced	PTEN	resistance	doxorubicin [DB00997]	breast cancer	reduced RNA expression	#153:3235	pmid:18332865	NA	iprkb	861d71a3-bf0d-4edf-b3ab-9eb4738f0338	#29:0	pending
+increased	FLT1	response	sunitinib [DB01268]	renal cancer	overexpression	#153:4001	pmid:21478036;pmid:24086736	CGI Pre-clinical	cancer genome interpreter	bf384f88bbb807472d731bf1d16c7a81	#29:0	NA
+increased	EGFR	response	cetuximab [DB00002]	colorectal adenocarcinoma	overexpression	#153:4014	NA	CGI FDA guidelines	cancer genome interpreter	c2fd0cf846487ceb1bd888df8df7c2a7	#29:0	NA
+reduced	SMAD4	resistance	Cetuximab [c1723]	head and neck squamous cell carcinoma	underexpression	#153:4756	pmid:26046389	CIViC D3	civic	720	#29:0	not required
+increased	TYMS	resistance	Pemetrexed [c61614]	lung non-small cell carcinoma	overexpression	#153:4762	pmid:26502926	CIViC B3	civic	832	#29:0	not required
+increased	RET	sensitivity	Sunitinib [c71622]	papillary adenocarcinoma	overexpression	#153:4804	pmid:20696054	CIViC C3	civic	1518	#29:0	not required
+increased	SGK1	resistance	Alpelisib [c94214]	breast cancer	overexpression	#153:4817	pmid:27451907	CIViC D5	civic	1729	#29:0	not required
+reduced	MGMT	sensitivity	Temozolomide [c1244]	malignant glioma	underexpression	#153:4843	pmid:21365007	CIViC B3	civic	2901	#29:0	not required
+increased	IGF1R	no response	cixutumumab + mitotane [DB00648 + DB12250]	adrenocortical carcinoma	increased RNA expression	#153:5465	pmid:18854392;pmid:24849545	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+increased	GZMA	favourable prognosis	patient	lung squamous cell carcinoma	increased RNA expression	#153:5558	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	papillary renal cell carcinoma	increased RNA expression	#153:5559	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	brain glioma	increased RNA expression	#153:5560	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	IL17A	prognostic indicator	patient	glioblastoma multiforme	increased protein expression	#153:5564	pmid:28680758	NA	iprkb	eb60b519-607b-4f96-9821-2f93eb32ba57	#29:0	pending
+increased	CD3G	favourable prognosis	patient	colorectal cancer	increased protein expression	#153:5567	pmid:20927778	NA	iprkb	ea16b483-e100-44ae-b7d3-5bf25985390a	#29:0	pending
+increased	HLA-A	favourable prognosis	patient	colorectal cancer	increased RNA expression	#153:5569	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	IFNG	favourable prognosis	patient	head and neck cancer	increased protein expression	#153:5573	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	PGR	prognostic indicator	patient	breast cancer	increased RNA expression	#153:5892	pmid:21422407	NA	iprkb	e3c7c004-27ab-410f-bb52-1c521a029128	#29:0	pending
+increased	FLT1	response	sunitinib [DB01268]	renal cancer	overexpression	#153:6363	pmid:21478036;pmid:24086736	CGI Pre-clinical	cancer genome interpreter	31ffdc9d37043d188c8c13a3f69bedba	#29:0	NA
+increased	PBK	resistance	Gefitinib [c1855]	lung non-small cell carcinoma	overexpression	#153:7124	pmid:26745678	CIViC D3	civic	835	#29:0	not required
+increased	SGK1	resistance	Alpelisib [c94214]	breast cancer	overexpression	#153:7179	pmid:27451907	CIViC B3	civic	1730	#29:0	not required
+reduced	MGMT	sensitivity	Temozolomide [c1244]	oligodendroglioma	underexpression	#153:7205	pmid:16541434	CIViC B2	civic	2902	#29:0	not required
+increased	IGF1R	no response	cixutumumab + mitotane [DB00648 + DB12250]	adrenocortical carcinoma	increased RNA expression	#153:7827	pmid:18854392;pmid:24849545	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+increased	CES2	favourable prognosis	patient	pancreatic adenocarcinoma	increased RNA expression	#153:7867	pmid:26025324	NA	iprkb	af64e58a-5628-4b6f-a464-4d87f35bd5e3	#29:0	pending
+increased	CXCL1	response	curcumin + oxaliplatin [DB00526 + DB11672]	colorectal cancer	increased RNA expression	#153:7893	pmid:27091625	NA	iprkb	4095790a-e9da-43aa-afd6-9fa41d505fa5	#29:0	pending
+increased	BRCC3	no response	radiation [c15846]	nasopharynx carcinoma	increased protein expression	#153:7911	pmid:26024915	NA	iprkb	5de02c9b-52cb-4e15-acf0-0e6ff1232e6a	#29:0	pending
+reduced	ERCC1	sensitivity	cisplatin [DB00515]	NA	reduced RNA expression	#153:7912	pmid:20418188	NA	iprkb	4d897d48-6653-4953-801b-02b9721e917c	#29:0	pending
+reduced	RAD51	sensitivity	cisplatin [DB00515]	NA	reduced RNA expression	#153:7913	pmid:17000754	NA	iprkb	6c824ca8-1c67-4d6e-ae67-f60957153b8b	#29:0	pending
+increased	GZMA	favourable prognosis	patient	cervical cancer	increased RNA expression	#153:7920	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	lung adenocarcinoma	increased RNA expression	#153:7921	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+reduced	BAP1	sensitivity	valproic acid [DB00313]	uveal melanoma	reduced RNA expression	#153:7922	pmid:22038994	NA	iprkb	4a8060cc-e132-4f3a-819a-816153010deb	#29:0	pending
+increased	CD8A	favourable prognosis	patient	glioblastoma multiforme	increased protein expression	#153:7926	pmid:28680758	NA	iprkb	700c2ddd-c017-44cd-9b5b-5b87b7cdf5ee	#29:0	pending
+increased	HLA-A	favourable prognosis	patient	brain cancer	increased RNA expression	#153:7931	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	IFNG	favourable prognosis	patient	breast cancer	increased protein expression	#153:7935	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	CCNE1	resistance	palbociclib [DB09073]	breast cancer	increased RNA expression	#153:7993	pmid:28270497	NA	iprkb	f333958d-657d-45a3-a3ef-2327b15add48	#29:0	pending
+increased	CD274	prognostic indicator	patient	renal cell carcinoma	increased RNA expression	#153:8254	pmid:15569934	NA	iprkb	41b959b4-80a7-4b1a-a516-5b8d7f5f7cc8	#29:0	pending
+increased	ERBB2	response	ado-trastuzumab emtansine [SE2KH7T06F]	breast adenocarcinoma	overexpression	#153:8738	NA	CGI FDA guidelines	cancer genome interpreter	439080260e4b005da42070a2dda1f59f	#29:0	NA
+increased	AGGF1	unfavourable prognosis	patient	hepatocellular carcinoma	protein overexpression	#153:9559	pmid:29340079	PROFYLE P4	Null	NA	#30:0	NA
+increased	PGR	sensitivity	medroxyprogesterone acetate+cyclophosphamide+doxorubicin+cisplatin	ovarian epithelial tumor	increased expression	#153:9575	pmid:18592789	OncoKB 4	Null	NA	#29:1	NA
+increased	ESR1	sensitivity	fulvestrant [DB00947]	ovarian epithelial tumor	increased expression	#153:9577	pmid:19239974	OncoKB 3A	Null	NA	#29:1	NA
+increased	TYMS	resistance	5-flurouracil+folinic acid+irinotecan	colorectal adenocarcinoma	increased expression	#153:9578	pmid:16077970	OncoKB 4	Null	NA	#29:1	NA
+increased	FOXC2	resistance	oxaliplatin [DB00526]	colorectal cancer	increased expression	#153:9587	pmid:32110058	CIViC D4	Null	NA	#30:3	NA
+increased	AURKA	resistance	Platinum Compound [c1450]	ovarian serous carcinoma	overexpression	#153:9667	pmid:27209210	CIViC B3	civic	1650	#29:0	not required
+increased	CD8A	favourable prognosis	colorectal cancer [DOID:9256]	colorectal cancer	increased protein expression	#153:9743	pmid:17008531	NA	Null	NA	#30:0	NA
+increased	CCND2	unfavourable prognosis	patient	stomach cancer	overexpression	#153:9784	pmid:10547574	CIViC D4	civic	361	#29:0	not required
+increased	ERBB3	resistance	Cetuximab [c1723]	colorectal cancer	overexpression	#153:9817	pmid:25520391	CIViC B4	civic	729	#29:0	not required
+increased	SYK	resistance	Paclitaxel [c1411]	ovarian cancer	overexpression	#153:9820	pmid:26096845	CIViC D3	civic	752	#29:0	not required
+reduced	ATM	sensitivity	Olaparib [c71721]	gastric adenocarcinoma	underexpression	#153:9834	pmid:24841718	CIViC D4	civic	878	#29:0	not required
+reduced	TYMS	sensitivity	Pemetrexed [c61614]	lung non-small cell carcinoma	underexpression	#153:9837	pmid:21367480	CIViC B3	civic	907	#29:0	not required
+increased	TYMS	resistance	Raltitrexed [c1804]	gastric adenocarcinoma	overexpression	#153:9840	pmid:22422354	CIViC B2	civic	929	#29:0	not required
+increased	PTPN11	unfavourable prognosis	patient	laryngeal carcinoma	overexpression	#153:9885	pmid:24297342	CIViC B2	civic	1316	#29:0	not required
+increased	FLT3	sensitivity	Sunitinib [c71622]	b-cell adult acute lymphocytic leukemia	overexpression	#153:9913	pmid:27181063	CIViC C3	civic	1528	#29:0	not required
+increased	MET	sensitivity	Crizotinib [c74061]	uveal melanoma	overexpression	#153:9919	pmid:24140933	CIViC D1	civic	1583	#29:0	not required
+reduced	STAG3	resistance	Vemurafenib [c64768]	melanoma	underexpression	#153:9932	pmid:27500726	CIViC D4	civic	1660	#29:0	not required
+reduced	MGMT	sensitivity	Temozolomide [c1244]	glioblastoma multiforme	underexpression	#153:10006	pmid:21331613	CIViC B3	civic	2903	#29:0	not required
+increased	TP53	resistance	Carboplatin [c1282]	ovarian cancer	overexpression	#153:10018	pmid:11595686	CIViC B3	civic	3013	#29:0	not required
+increased	MET	resistance	Selumetinib [c66939]	uveal melanoma	overexpression	#153:10020	pmid:25952648	CIViC D3	civic	3038	#29:0	not required
+reduced	ARID1A	unfavourable prognosis	patient	ovarian clear cell carcinoma	underexpression	#153:10072	pmid:22101352	CIViC B3	civic	5787	#29:0	not required
+increased	PARP1	sensitivity	Olaparib [c71721]	malignant peripheral nerve sheath tumor	overexpression	#153:10112	pmid:26650448	CIViC D3	civic	7016	#29:0	not required
+increased	CDK6	sensitivity	Palbociclib [c49176]	glioblastoma proneural subtype	overexpression	#153:10132	pmid:28903422	CIViC D2	civic	7800	#29:0	not required
+increased	CCND1	unfavourable prognosis	patient	b-cell childhood acute lymphoblastic leukemia	overexpression	#153:10139	pmid:29408328	CIViC B2	civic	8115	#29:0	not required
+reduced	RRM1	favourable prognosis	patient	lung non-small cell carcinoma	underexpression	#153:10146	pmid:16980606	CIViC B2	civic	8024	#29:0	not required
+increased	TACSTD2	unfavourable prognosis	patient	prostate cancer	overexpression	#153:10150	pmid:31932422	CIViC B3	civic	7837	#29:0	not required
+increased	MIR21	unfavourable prognosis	patient	astrocytoma	overexpression	#153:10152	pmid:20219352	CIViC B3	civic	8001	#29:0	not required
+increased	EZH2	unfavourable prognosis	patient	glioblastoma multiforme	overexpression	#153:10153	pmid:32180229	CIViC B2	civic	8006	#29:0	not required
+increased	ZEB1	unfavourable prognosis	patient	colon cancer	overexpression	#153:10156	pmid:29151941	CIViC B4	civic	8085	#29:0	not required
+increased	CUL7	unfavourable prognosis	patient	glioblastoma multiforme	overexpression	#153:10157	pmid:32252802	CIViC B4	civic	8088	#29:0	not required
+increased	ESR1	sensitivity	ribociclib [DB11730]	breast cancer	increased protein expression	#153:10466	NA	IPR-A	Null	NA	#30:0	NA
+increased	ESR1	sensitivity	abemaciclib [DB12001]	breast cancer	increased protein expression	#153:10468	NA	IPR-A	Null	NA	#30:0	NA
+increased	ERCC1	resistance	platinum-based chemotherapy [c1450]	ovarian cancer	increased protein expression	#153:10469	pmid:27446360	CIViC B	Null	NA	#32:7	initial
+increased	ERCC1	resistance	platinum-based chemotherapy [c1450]	epithelial ovarian cancer	increased protein expression	#153:10471	pmid:31902551	CIViC B	Null	NA	#32:7	initial
+increased	CCND2	unfavourable prognosis	patient	stomach cancer	overexpression	#153:10486	pmid:10547574	CIViC D4	civic	359	#29:0	not required
+increased	ALDH1A2	favourable prognosis	patient	head and neck squamous cell carcinoma	overexpression	#153:10515	pmid:26634247	CIViC B3	civic	1114	#29:0	not required
+increased	SIRT1	unfavourable prognosis	patient	pancreatic ductal carcinoma	overexpression	#153:10520	pmid:24088390	CIViC B3	civic	1293	#29:0	not required
+increased	BCL2L1	resistance	paclitaxel [DB01229]	ovarian carcinoma	increased expression	#153:10557	pmid:15661210	CIViC D	Null	NA	#32:7	initial
+increased	BCL2L1	resistance	paclitaxel [DB01229]	high-grade serous ovarian cancer	increased expression	#153:10558	pmid:31462500	CIViC D	Null	NA	#32:7	initial
+increased	TNFRSF8	sensitivity	brentuximab vedotin [DB08870]	adult systemic anaplastic large cell lymphoma	increased protein expression	#153:10560	NA	IPR-A	Null	NA	#30:0	NA
+reduced	BCL2	sensitivity	cisplatin [DB00515]	ovarian carcinoma	reduced protein expression	#153:10566	pmid:30774376	CIViC D	Null	NA	#32:7	initial
+increased	MT3	resistance	cisplatin [DB00515]	ovarian adenocarcinoma	increased RNA expression	#153:10567	pmid:16061661	CIViC D	Null	NA	#32:7	initial
+increased	MT1E	resistance	cisplatin [DB00515]	ovarian adenocarcinoma	increased RNA expression	#153:10568	pmid:26986722	CIViC D	Null	NA	#32:7	initial
+increased	ERBB3	sensitivity	afatinib + selumetinib	cancer	overexpression	#153:10584	pmid:24685132	CIViC D3	civic	1152	#29:0	not required
+increased	ESR1	sensitivity	letrozole + palbociclib	breast cancer	overexpression	#153:10594	pmid:25524798	CIViC B4	civic	1541	#29:0	not required
+increased	CHEK1	sensitivity	cisplatin + olaparib + prexasertib	lung small cell carcinoma	overexpression	#153:10609	pmid:28490518	CIViC D4	civic	4874	#29:0	not required
+reduced	RRM1	sensitivity	gemcitabine [DB00441]	non-small cell lung cancer	reduced protein expression	#153:10630	pmid:19884554	CIViC B	Null	NA	#32:7	initial
+increased	RRM1	resistance	gemcitabine [DB00441]	biliary tract carcinoma	increased protein expression	#153:10632	pmid:20811706	CIViC B	Null	NA	#32:7	initial
+reduced	RRM1	sensitivity	gemcitabine [DB00441]	non-small cell lung cancer	reduced protein expression	#153:10633	pmid:21889227	CIViC B	Null	NA	#32:7	initial
+increased	RRM1	resistance	gemcitabine [DB00441]	pancreatic cancer	increased RNA expression	#153:10634	pmid:31823522	CIViC D	Null	NA	#32:7	initial
+increased	TYMS	resistance	fluorouracil [DB00544]	pancreatic cancer	increased RNA expression	#153:10635	pmid:21617862	CIViC D	Null	NA	#32:7	initial
+increased	CASP8	sensitivity	Conatumumab [c71015]	bone ewing's sarcoma	overexpression	#153:10642	pmid:26291055	CIViC D3	civic	831	#29:0	not required
+increased	IGF2	sensitivity	Linsitinib [c70982]	prostate cancer	overexpression	#153:10700	pmid:25670080	CIViC D3	civic	414	#29:0	not required
+increased	EGFR	sensitivity	epidermal growth factor receptor tyrosine kinase inhibitor [c2167]	lung non-small cell carcinoma	overexpression	#153:10710	pmid:26439803	CIViC B3	civic	737	#29:0	not required
+increased	ERBB3	resistance	Selumetinib [c66939]	cancer	overexpression	#153:10737	pmid:24685132	CIViC D4	civic	1153	#29:0	not required
+increased	RB1	resistance	doxorubicin [c456]	pancreatic adenocarcinoma	overexpression	#153:10747	pmid:11792751	CIViC D2	civic	1324	#29:0	not required
+increased	BIRC5	resistance	Trastuzumab [c1647]	her2-receptor positive breast cancer	overexpression	#153:10751	pmid:23204226	CIViC B4	civic	1449	#29:0	not required
+increased	RRM2	resistance	gemcitabine [c66876]	pancreatic cancer	overexpression	#153:10765	pmid:17224927	CIViC D2	civic	1860	#29:0	not required
+reduced	RRM1	sensitivity	cisplatin + gemcitabine	lung non-small cell carcinoma	underexpression	#153:10782	pmid:24595080	CIViC B4	civic	2905	#29:0	not required
+reduced	RRM1	sensitivity	Docetaxel [c1526]	lung non-small cell carcinoma	underexpression	#153:10796	pmid:24647522	CIViC B4	civic	5530	#29:0	not required
+reduced	RRM1	sensitivity	gemcitabine [c66876]	lung non-small cell carcinoma	underexpression	#153:10797	pmid:23038758	CIViC B3	civic	5599	#29:0	not required
+increased	XIAP	sensitivity	Smac Mimetic GDC-0152 [c88274]	NA	increased RNA expression	#153:11066	pmid:24841289	NA	Null	NA	#30:6	NA
+reduced	EGFR	sensitivity	erlotinib [DB00530]	non-small cell lung cancer	gain of function	#153:12571	pmid:33106373	IPR-D	Null	NA	#30:14	initial
+increased	EGFR	resistance	vemurafenib [DB08881]	melanoma	increased RNA expression	#153:12612	pmid:28607484	IPR-D	Null	NA	#30:14	initial
+reduced	ATRX	sensitivity	pcv regimen [c63491]	astrocytoma	underexpression	#153:12749	pmid:23904111	CIViC B3	civic	1647	#29:0	not required
+increased	ACTL6A	resistance	Cisplatin [c376]	ovarian cancer	overexpression	#153:13051	pmid:33408251	CIViC D3	civic	8983	#29:0	not required
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	melanoma	increased protein expression	#153:13067	NA	NA	Null	NA	#30:0	initial
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	esophageal cancer	increased protein expression	#153:13069	NA	NA	Null	NA	#30:0	initial
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	adenocarcinoma of the gastroesophageal junction	increased protein expression	#153:13070	NA	NA	Null	NA	#30:0	initial
+increased	FGFR3	sensitivity	pd173074	bladder carcinoma	overexpression	#153:13115	pmid:21119661	CIViC D3	civic	803	#29:0	not required
+increased	ABCB1	resistance	Bafetinib [c62516]	chronic myeloid leukemia	overexpression	#153:13124	pmid:18191450	CIViC D3	civic	2681	#29:0	not required
+increased	YAP1	sensitivity	docetaxel + verteporfin	esophageal cancer	overexpression	#153:13166	pmid:25739674	CIViC D2	civic	9329	#29:0	not required
+increased	EGFR	no response	cetuximab + docetaxel	head and neck squamous cell carcinoma	overexpression	#153:13191	pmid:21653686	CIViC B3	civic	849	#29:0	not required
+increased	EPAS1	no response	pazopanib [c74547]	renal cell carcinoma	overexpression	#153:13206	pmid:23881929	CIViC B2	civic	1673	#29:0	not required
+increased	MET	no response	Rilotumumab [c67079]	stomach carcinoma	overexpression	#153:13220	pmid:28958504	CIViC B5	civic	5835	#29:0	not required
+increased	ERBB2	no response	gemcitabine + trastuzumab	pancreatic cancer	overexpression	#153:13222	pmid:15581051	CIViC B4	civic	5956	#29:0	not required
+increased	AURKA	sensitivity	alisertib + cisplatin	esophagus adenocarcinoma	overexpression	#153:13245	pmid:22302096	CIViC D4	civic	9627	#29:0	not required
+increased	ERBB2	sensitivity	pembrolizumab [DB09037]	gastric cancer	increased protein expression	#153:13266	NA	IPR-A	Null	NA	#30:0	initial
+increased	APLN	resistance	bevacizumab [DB00112]	colorectal cancer	increased RNA expression	#153:13271	pmid:28487489	NA	Null	NA	#30:6	initial
+increased	PIK3R2	no resistance	Vemurafenib [c64768]	melanoma	overexpression	#153:13317	pmid:24265155	CIViC D2	civic	6266	#29:0	not required
+increased	ERBB3	no resistance	Trastuzumab Emtansine [c82492]	her2-receptor positive breast cancer	overexpression	#153:13346	pmid:26920887	CIViC B2	civic	8707	#29:0	not required
+increased	CNR1	sensitivity	cannabinoid receptor agonist	NA	increased RNA expression	#153:13426	pmid: 19509271	PROFYLE T4	Null	NA	#31:0	initial
+reduced	ERCC1	sensitivity	carboplatin + gemcitabine	lung non-small cell carcinoma	underexpression	#153:13457	pmid:19884554	CIViC B3	civic	10142	#29:0	not required
+increased	IGF2	no response	Linsitinib [c70982]	prostate cancer	overexpression	#153:13665	pmid:25670080	CIViC D3	civic	412	#29:0	not required
+increased	ABCB1	no resistance	Alectinib [c101790]	lung non-small cell carcinoma	overexpression	#153:13670	pmid:26870817	CIViC D3	civic	10016	#29:0	not required
+increased	LAG3	eligibility	Molecular Analysis for Therapy Choice (MATCH)	advanced cancer	increased RNA expression	#153:13733	NA	IPR-C	Null	NA	#30:0	initial
+increased	ERBB2	eligibility	An Open-Label, Multinational, Multicenter, Phase 3b/4 Study of Trastuzumab Deruxtecan in Patients With or Without Baseline Brain Metastasis With Previously Treated Advanced/Metastatic HER2-Positive Breast Cancer (DESTINY-Breast12)	her2-receptor positive breast cancer	increased protein expression	#153:13753	NA	IPR-C	Null	NA	#30:0	initial
+increased	MDM2	eligibility	brightline-1: a study to compare bi 907828 with doxorubicin in people with a type of cancer called dedifferentiated liposarcoma	dedifferentiated liposarcoma	increased RNA expression	#153:13765	NA	IPR-E	Null	NA	#30:0	initial
+increased	FGFR3	sensitivity	Rogaratinib [c112205]	bladder urothelial carcinoma	increased RNA expression	#153:14329	pmid 31405822	IPR-C	Null	NA	#30:52	initial
+increased	EZHIP	sensitivity	PARP inhibitor + radiotherapy	NA	increased RNA expression	#153:14383	33186520	PROFYLE T4	Null	NA	#30:3	initial
+increased	IGF1R	no response	cixutumumab [DB12250]	adrenocortical carcinoma	increased RNA expression	#154:741	pmid:18854392;pmid:24849545	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+increased	PRAME	likely sensitivity	bpx 701	melanoma	increased RNA expression	#154:751	pmid:21771875	NA	iprkb	6146b073-1de7-47f2-97fe-b90bacc6f05b	#29:0	pending
+increased	CA9	prognostic indicator	patient	breast cancer	increased RNA expression	#154:755	pmid:23063837	NA	iprkb	03d256aa-6876-40d0-a20e-43fb2342cb8a	#29:0	pending
+increased	IGF2	recurrent	adrenocortical carcinoma [DOID:3948]	adrenocortical carcinoma	increased RNA expression	#154:771	pmid:25089899	NA	iprkb	33ff2ac4-02b1-4637-b336-6b34ab370c09	#29:0	pending
+reduced	ESR1	resistance	fulvestrant [DB00947]	breast cancer	reduced RNA expression	#154:811	pmid:27748766	NA	iprkb	d09b2673-db84-48cb-8e00-c2f539e24407	#29:0	pending
+reduced	RBBP8	sensitivity	mitomycin c	NA	reduced RNA expression	#154:826	pmid:24794434	NA	iprkb	4a875e43-1a2b-4501-8821-34efbaa3ecda	#29:0	pending
+increased	IL6R	prognostic indicator	patient	ovarian cancer	increased protein expression	#154:830	pmid:25658637	NA	iprkb	94bd9521-354c-4c76-9fa8-18bd981dfb83	#29:0	pending
+reduced	ARID1A	sensitivity	EZH2 Inhibitor [c156804]	ovarian cancer	reduced RNA expression	#154:833	pmid:25686104	NA	iprkb	30ddc865-ad1b-45e6-824f-580ba56c1644	#29:0	pending
+increased	GZMA	favourable prognosis	patient	thyroid cancer	increased RNA expression	#154:835	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	liver cancer	increased RNA expression	#154:836	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	GZMB	favourable prognosis	patient	colorectal cancer	increased protein expression	#154:843	pmid:20927778	NA	iprkb	ea16b483-e100-44ae-b7d3-5bf25985390a	#29:0	pending
+increased	CPS1	prognostic indicator	patient	colorectal cancer	increased protein expression	#154:846	pmid:25099619	NA	iprkb	7c4c1b08-8c05-42ef-bb3f-2aa80966c27d	#29:0	pending
+increased	CD274	sensitivity	pembrolizumab [DB09037]	non-small cell lung carcinoma	increased protein expression	#154:847	pmid:28529902	NA	iprkb	94b93d91-3715-4828-96fc-1cc39444a408	#29:0	pending
+increased	IFNG	favourable prognosis	patient	hepatocellular carcinoma	increased protein expression	#154:850	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+reduced	REV3L	sensitivity	cisplatin [DB00515]	non-small cell lung carcinoma	reduced RNA expression	#154:851	pmid:21068376	NA	iprkb	1e820930-47e7-46a8-8803-0eb8086b0eb1	#29:0	pending
+increased	SLC29A1	sensitivity	gemcitabine [DB00441]	leiomyosarcoma	increased RNA expression	#154:861	pmid:28641307	NA	iprkb	58b48d2a-3eeb-46b1-81d8-57df8ae4385d	#29:0	pending
+increased	DLL3	sensitivity	rovalpituzumab tesirine [DB13017]	lung small cell carcinoma	increased protein expression	#154:911	pmid:27932068	NA	iprkb	e92ae9e1-dd65-45ae-be15-14480d691d91	#29:0	pending
+reduced	BAP1	reduced function	BAP1	uveal melanoma	reduced RNA expression	#154:1012	pmid:25147369	NA	iprkb	fdb175c4-0438-4d95-badf-89c6f7a2be6d	#29:0	pending
+reduced	TYMS	favourable prognosis	patient	colorectal cancer	reduced RNA expression	#154:1161	pmid:26083491	NA	iprkb	c30f61b6-d81b-4e89-8da9-da1cce5cef73	#29:0	pending
+increased	BCL6	response	Onalespib [c85454]	lymphoma	overexpression	#154:1636	NA	CGI Early trials	cancer genome interpreter	ed86db89aba5dcfd8ca7c42139c2e853	#29:0	NA
+increased	PDGFRA	response	sunitinib [DB01268]	renal cancer	overexpression	#154:1643	pmid:24086736	CGI Pre-clinical	cancer genome interpreter	8acc98dcc21892706d6c5bbbe82ce510	#29:0	NA
+increased	IGF1R	no response	cixutumumab [DB12250]	adrenocortical carcinoma	increased RNA expression	#154:3103	pmid:18854392;pmid:24849545	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+increased	PRAME	likely sensitivity	bpx 701	sarcoma	increased RNA expression	#154:3113	pmid:21771875	NA	iprkb	6146b073-1de7-47f2-97fe-b90bacc6f05b	#29:0	pending
+increased	S100P	targetable	pancreatic cancer [DOID:1793]	pancreatic cancer	increased RNA expression	#154:3167	pmid:24637492	NA	iprkb	fc58a202-1029-4616-9f16-521cb5ecfe11	#29:0	pending
+increased	CDK6	resistance	tamoxifen [DB00675]	breast cancer	increased RNA expression	#154:3173	pmid:27748766	NA	iprkb	54ef490a-db9b-4157-b9df-76b9c98abcc0	#29:0	pending
+reduced	ARID1A	sensitivity	EZH2 Inhibitor [c156804]	ovarian clear cell carcinoma	reduced RNA expression	#154:3195	pmid:25686104	NA	iprkb	30ddc865-ad1b-45e6-824f-580ba56c1644	#29:0	pending
+increased	GZMA	favourable prognosis	patient	ovarian cancer	increased RNA expression	#154:3197	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	melanoma	increased RNA expression	#154:3198	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	IL2RA	favourable prognosis	patient	colorectal cancer	increased protein expression	#154:3205	pmid:20927778	NA	iprkb	ea16b483-e100-44ae-b7d3-5bf25985390a	#29:0	pending
+increased	CTNNB1	likely resistance	Immunotherapy [c15262]	melanoma	increased protein expression	#154:3206	pmid:25970248	NA	iprkb	d9def14a-063b-4e8b-91c4-f84847a502e5	#29:0	pending
+reduced	ERCC1	response	platinum based therapies	head and neck squamous cell carcinoma	reduced protein expression	#154:3208	pmid:18594541	NA	iprkb	3431682c-62e3-49ea-8cef-a560bab681c8	#29:0	pending
+increased	CD3G	favourable prognosis	patient	colorectal cancer	increased protein expression	#154:3210	pmid:17008531	NA	iprkb	c911faf1-1870-48e3-a927-84e96b205dd4	#29:0	pending
+increased	IFNG	favourable prognosis	patient	merkel cell carcinoma	increased protein expression	#154:3212	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+reduced	MAD2L2	resistance	PARP Inhibitor [c62554]	breast cancer	reduced RNA expression	#154:3213	pmid:25799992	NA	iprkb	d85f287c-9342-4f83-a9f1-74aa8a872b02	#29:0	pending
+increased	SLC29A1	sensitivity	gemcitabine [DB00441]	angiosarcoma	increased RNA expression	#154:3223	pmid:28641307	NA	iprkb	58b48d2a-3eeb-46b1-81d8-57df8ae4385d	#29:0	pending
+increased	DLL3	sensitivity	rovalpituzumab tesirine [DB13017]	pulmonary large cell neuroendocrine carcinoma	increased protein expression	#154:3273	pmid:27932068	NA	iprkb	e92ae9e1-dd65-45ae-be15-14480d691d91	#29:0	pending
+reduced	BAP1	prognostic indicator	patient	uveal melanoma	reduced RNA expression	#154:3374	pmid:25147369	NA	iprkb	f9582908-6eca-492d-a22f-88f91c374134	#29:0	pending
+increased	HGF	resistance	mek inhibitor	uveal melanoma	increased RNA expression	#154:3522	pmid:25952648	NA	iprkb	a9bfae05-2b18-4350-b9a5-a4048ebe5ea9	#29:0	pending
+reduced	ERCC1	reduced function	ERCC1	colorectal cancer	reduced RNA expression	#154:3523	pmid:26083491	NA	iprkb	6242fd6e-979d-4b76-b33b-8e1ded5fc108	#29:0	pending
+increased	AR	response	enzalutamide [DB08899]	prostate adenocarcinoma	overexpression	#154:3997	pmid:24882673	CGI Early trials	cancer genome interpreter	9c90d531648063ca1b32a2b67222198c	#29:0	NA
+increased	MKI67	response	sunitinib [DB01268]	renal cancer	overexpression	#154:4002	pmid:24086736	CGI Pre-clinical	cancer genome interpreter	62d6578243bd4666aac32c4876d5aef2	#29:0	NA
+increased	ERBB2	response	lapatinib [DB01259]	breast adenocarcinoma	overexpression	#154:4014	NA	CGI FDA guidelines	cancer genome interpreter	22aa22eabd709cdbc1f503737faec819	#29:0	NA
+increased	PTGS2	sensitivity	Aspirin [c287]	colorectal cancer	overexpression	#154:4807	pmid:17522398	CIViC B3	civic	1573	#29:0	not required
+increased	MYC	sensitivity	platinum based therapies	ovary adenocarcinoma	increased RNA expression	#154:5460	pmid:15132769	NA	iprkb	8f5b8da0-41c5-4f30-a236-a89c452166eb	#29:0	pending
+increased	IGF1R	sensitivity	mitotane + nvp aew54 [DB00648 + NVP AEW54]	adrenocortical carcinoma	increased RNA expression	#154:5465	pmid:18854392	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+increased	CES2	sensitivity	folfirinox	pancreatic adenocarcinoma	increased RNA expression	#154:5505	pmid:26025324	NA	iprkb	b8f32bd2-3f97-44ae-953c-7e0e3cecdb69	#29:0	pending
+increased	GZMA	favourable prognosis	patient	head and neck cancer	increased RNA expression	#154:5558	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	colorectal cancer	increased RNA expression	#154:5559	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+reduced	MSH6	resistance	cisplatin [DB00515]	NA	reduced RNA expression	#154:5560	pmid:26519826	NA	iprkb	39036f48-6d3a-4153-8421-3c637fdceefd	#29:0	pending
+reduced	FANCF	sensitivity	cisplatin [DB00515]	ovarian cancer	reduced RNA expression	#154:5561	pmid:12692539	NA	iprkb	0f57c0d9-9673-4a54-8442-dce3238caf08	#29:0	pending
+increased	GZMA	sensitivity	ipilimumab [DB06186]	melanoma	increased RNA expression	#154:5565	pmid:26359337	NA	iprkb	d0362e6c-d746-4de7-97c0-16d579434532	#29:0	pending
+increased	CD8A	favourable prognosis	patient	breast cancer	increased RNA expression	#154:5569	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	CD19	favourable prognosis	patient	colorectal cancer	increased RNA expression	#154:5570	pmid:24138885	NA	iprkb	ee8cf40b-eb80-4f67-b7fb-af572522ee31	#29:0	pending
+increased	IFNG	favourable prognosis	patient	esophageal cancer	increased protein expression	#154:5573	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	GZMB	sensitivity	nivolumab [DB09035]	melanoma	increased RNA expression	#154:5574	pmid:27757299	NA	iprkb	5f70ec55-bf4a-4ac4-add3-5ea0f8837f8e	#29:0	pending
+increased	NTHL1	prognostic indicator	patient	colorectal cancer	increased RNA expression	#154:5585	pmid:15143881	NA	iprkb	8928916d-11cf-4324-a8f4-c005a1c1aff0	#29:0	pending
+increased	MDK	resistance	5 fu	cervical cancer	increased RNA expression	#154:5591	pmid:16644108	NA	iprkb	e19baf49-ceeb-4a8d-a49b-f43d7ab424d4	#29:0	pending
+reduced	HDAC2	sensitivity	olaparib [DB09074]	prostate cancer	reduced RNA expression	#154:5885	pmid:26510020	NA	iprkb	771a885b-ffd1-4b56-bd17-af819c54e7ac	#29:0	pending
+increased	HIF1A	response	sunitinib [DB01268]	renal cancer	overexpression	#154:6363	pmid:24086736	CGI Pre-clinical	cancer genome interpreter	daebf3d368f81162f07334eed89d1066	#29:0	NA
+reduced	CD69	response	bendamustine [DB06769]	chronic lymphocytic leukemia	underexpression	#154:6369	pmid:26701728	CGI Pre-clinical	cancer genome interpreter	45ec8d06d08bfb7b7f11adff3d2b9236	#29:0	NA
+increased	FLT3	sensitivity	sunitinib [DB01268]	b-cell acute lymphoblastic leukemia	increased RNA expression	#154:7893	pmid:27181063	NA	iprkb	9ccf4083-9e1c-4262-8ca7-22567a8542ba	#29:0	pending
+reduced	BRIP1	sensitivity	mitomycin c	NA	reduced RNA expression	#154:7911	pmid:16153896	NA	iprkb	8946e676-e47b-49ba-b2d2-716d7d3f60cf	#29:0	pending
+increased	GZMA	favourable prognosis	patient	uterine cancer	increased RNA expression	#154:7920	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	stomach cancer	increased RNA expression	#154:7921	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+reduced	FANCF	sensitivity	mitomycin c	ovarian cancer	reduced RNA expression	#154:7923	pmid:12692539	NA	iprkb	0f57c0d9-9673-4a54-8442-dce3238caf08	#29:0	pending
+reduced	PTEN	resistance	nivolumab [DB09035]	melanoma	reduced protein expression	#154:7926	pmid:26645196	NA	iprkb	c05acee9-817a-42f7-a139-8249e5d73e18	#29:0	pending
+increased	PRF1	sensitivity	ipilimumab [DB06186]	melanoma	increased RNA expression	#154:7927	pmid:26359337	NA	iprkb	d0362e6c-d746-4de7-97c0-16d579434532	#29:0	pending
+increased	CD8A	response	pembrolizumab [DB09037]	melanoma	increased protein expression	#154:7928	pmid:25428505	NA	iprkb	4f63352e-a852-41bd-93c1-2386cbe6d804	#29:0	pending
+increased	CD8A	favourable prognosis	patient	kidney cancer	increased RNA expression	#154:7931	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	MS4A1	favourable prognosis	patient	colorectal cancer	increased RNA expression	#154:7932	pmid:24138885	NA	iprkb	ee8cf40b-eb80-4f67-b7fb-af572522ee31	#29:0	pending
+increased	IFNG	favourable prognosis	patient	colorectal cancer	increased protein expression	#154:7935	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	CD274	sensitivity	nivolumab [DB09035]	melanoma	increased RNA expression	#154:7936	pmid:27757299	NA	iprkb	5f70ec55-bf4a-4ac4-add3-5ea0f8837f8e	#29:0	pending
+increased	MDK	resistance	doxorubicin [DB00997]	stomach cancer	increased RNA expression	#154:7953	pmid:16644108	NA	iprkb	e19baf49-ceeb-4a8d-a49b-f43d7ab424d4	#29:0	pending
+increased	ZNF217	prognostic indicator	patient	breast cancer	increased RNA expression	#154:8033	pmid:22593193	NA	iprkb	bd2894dc-c2a7-4937-a0c0-ac6644a034f9	#29:0	pending
+increased	ERBB2	sensitivity	pertuzumab + trastuzumab [c138042]	breast cancer	increased RNA expression	#154:8257	pmid:22153890	NA	iprkb	fb33c129-8821-42ae-8275-430c88356efb	#29:0	pending
+increased	CA9	response	sunitinib [DB01268]	renal cancer	overexpression	#154:8722	pmid:24086736	CGI Pre-clinical	cancer genome interpreter	7e4f4655d3e718c1e8fcdf61ec98f04e	#29:0	NA
+increased	ERBB2	response	pertuzumab [DB06366]	breast adenocarcinoma	overexpression	#154:8738	NA	CGI FDA guidelines	cancer genome interpreter	cfd2a542365cb037bd7cb6533fcebd37	#29:0	NA
+increased	PGR	sensitivity	medroxyprogesterone acetate+paraplatin+cyclophosphamide	ovarian epithelial tumor	increased expression	#154:9572	pmid:18592789	OncoKB 4	Null	NA	#29:1	NA
+increased	PGR	sensitivity	letrozole [DB01006]	ovarian cancer, other	increased expression	#154:9573	pmid:12114425	OncoKB 3A	Null	NA	#29:1	NA
+increased	TYMS	resistance	fluorouracil [DB00544]	colorectal adenocarcinoma	increased expression	#154:9575	pmid:16596248	OncoKB 4	Null	NA	#29:1	NA
+increased	CTAG1B	sensitivity	Autologous Anti-NY-ESO-1/LAGE-1 TCR-transduced c259 T Lymphocytes GSK3377794 [c121379]	multiple myeloma	overexpression	#154:9668	pmid:26193344	CIViC B3	civic	2940	#29:0	not required
+increased	GZMB	favourable prognosis	colorectal cancer [DOID:9256]	colorectal cancer	increased protein expression	#154:9737	pmid:17008531	NA	Null	NA	#30:0	NA
+increased	CCND1	unfavourable prognosis	patient	breast cancer	overexpression	#154:9777	pmid:15961768	CIViC B4	civic	356	#29:0	not required
+increased	CCNE1	unfavourable prognosis	patient	breast cancer	overexpression	#154:9778	pmid:12432043	CIViC B4	civic	363	#29:0	not required
+increased	EZH2	unfavourable prognosis	patient	cancer	overexpression	#154:9811	pmid:26683709	CIViC B4	civic	731	#29:0	not required
+increased	CCND1	resistance	Tamoxifen [c62078]	estrogen-receptor positive breast cancer	overexpression	#154:9825	pmid:15138475	CIViC B3	civic	856	#29:0	not required
+increased	TIMP1	resistance	Fulvestrant [c1379]	breast cancer	overexpression	#154:9830	pmid:23881388	CIViC D2	civic	901	#29:0	not required
+increased	JAK1	sensitivity	enzastaurin [c77392]	lung non-small cell carcinoma	overexpression	#154:9834	pmid:22333600	CIViC D4	civic	931	#29:0	not required
+increased	ABCB1	resistance	Paclitaxel [c1411]	lung non-small cell carcinoma	overexpression	#154:9836	pmid:21883677	CIViC D2	civic	944	#29:0	not required
+reduced	THBS2	unfavourable prognosis	patient	colorectal cancer	underexpression	#154:9840	pmid:26807188	CIViC B3	civic	974	#29:0	not required
+increased	ALDH1A2	favourable prognosis	patient	head and neck squamous cell carcinoma	overexpression	#154:9856	pmid:23635773	CIViC B3	civic	1116	#29:0	not required
+increased	CDK6	resistance	Fulvestrant [c1379]	estrogen-receptor positive breast cancer	overexpression	#154:9906	pmid:27252418	CIViC B4	civic	1526	#29:0	not required
+increased	CCND1	sensitivity	Palbociclib [c49176]	mantle cell lymphoma	overexpression	#154:9910	pmid:16690963	CIViC D1	civic	1563	#29:0	not required
+reduced	ATRX	unfavourable prognosis	patient	glioblastoma multiforme	underexpression	#154:9924	pmid:26936505	CIViC D4	civic	1648	#29:0	not required
+reduced	MGMT	sensitivity	Temozolomide [c1244]	neuroendocrine tumor	underexpression	#154:10000	pmid:19118063	CIViC B2	civic	2904	#29:0	not required
+increased	TP53	resistance	Cisplatin [c376]	ovarian cancer	overexpression	#154:10012	pmid:11595686	CIViC B3	civic	3013	#29:0	not required
+increased	AKT3	resistance	Vemurafenib [c64768]	melanoma	overexpression	#154:10088	pmid:24265155	CIViC D2	civic	6261	#29:0	not required
+increased	RET	unfavourable prognosis	patient	lung adenocarcinoma	overexpression	#154:10107	pmid:24037524	CIViC B3	civic	7056	#29:0	not required
+increased	PDGFRB	sensitivity	Sunitinib [c71622]	dermatofibrosarcoma protuberans	overexpression	#154:10132	pmid:29760553	CIViC C3	civic	7992	#29:0	not required
+reduced	ERCC1	favourable prognosis	patient	lung non-small cell carcinoma	underexpression	#154:10140	pmid:16980606	CIViC B3	civic	8025	#29:0	not required
+increased	IL33	unfavourable prognosis	patient	malignant glioma	overexpression	#154:10146	pmid:27050560	CIViC B3	civic	8003	#29:0	not required
+increased	CCN2	unfavourable prognosis	patient	glioma	overexpression	#154:10147	pmid:32197031	CIViC B3	civic	8027	#29:0	not required
+increased	MIR21	resistance	Cisplatin [c376]	lung non-small cell carcinoma	overexpression	#154:10151	pmid:22237007	CIViC B3	civic	8109	#29:0	not required
+increased	CCND2	unfavourable prognosis	patient	stomach cancer	overexpression	#154:10160	pmid:10547574	CIViC D4	civic	362	#29:0	not required
+increased	NT5E	sensitivity	Cetuximab [c1723]	colorectal cancer	overexpression	#154:10164	pmid:25520391	CIViC B3	civic	730	#29:0	not required
+reduced	TYMS	sensitivity	Pemetrexed [c61614]	prostate cancer	underexpression	#154:10168	pmid:24782778	CIViC C2	civic	908	#29:0	not required
+increased	EGFR	unfavourable prognosis	patient	head and neck squamous cell carcinoma	overexpression	#154:10488	pmid:9625170	CIViC B3	civic	782	#29:0	not required
+increased	SPHK1	unfavourable prognosis	patient	cervical cancer	overexpression	#154:10490	pmid:26311741	CIViC B2	civic	830	#29:0	not required
+increased	BCL2L1	resistance	topotecan [DB01030]	ovarian carcinoma	increased protein expression	#154:10544	pmid:15661210	CIViC D	Null	NA	#32:7	initial
+increased	ERBB2	sensitivity	tucatinib [DB11652]	breast cancer	increased protein expression	#154:10546	NA	IPR-A	Null	NA	#30:0	NA
+increased	TNFRSF8	sensitivity	brentuximab vedotin [DB08870]	peripheral t-cell lymphoma	increased protein expression	#154:10547	NA	IPR-A	Null	NA	#30:0	NA
+increased	ERBB2	sensitivity	neratinib [DB11828]	breast cancer	increased protein expression	#154:10548	NA	IPR-A	Null	NA	#30:0	NA
+increased	BCL2L1	resistance	cisplatin [DB00515]	high-grade serous ovarian cancer	increased expression	#154:10552	pmid:31462500	CIViC D	Null	NA	#32:7	initial
+increased	MYC	sensitivity	cisplatin + olaparib + prexasertib	lung small cell carcinoma	overexpression	#154:10589	pmid:28490518	CIViC D4	civic	3003	#29:0	not required
+reduced	ERCC1	sensitivity	gemcitabine [DB00441]	non-small cell lung cancer	reduced protein expression	#154:10615	pmid:19884554	CIViC B	Null	NA	#32:7	initial
+increased	SLC29A1	sensitivity	gemcitabine [DB00441]	pancreatic adenocarcinoma	increased protein expression	#154:10617	pmid:22705007	CIViC B	Null	NA	#32:7	initial
+increased	RRM1	resistance	gemcitabine [DB00441]	pancreatic cancer	increased protein expression	#154:10618	pmid:31823522	CIViC D	Null	NA	#32:7	initial
+increased	RRM1	resistance	carboplatin + gemcitabine regimen [c63410]	non-small cell lung cancer	increased RNA expression	#154:10619	pmid:16966686	CIViC B	Null	NA	#32:7	initial
+reduced	ATM	sensitivity	olaparib + paclitaxel	stomach cancer	underexpression	#154:10654	pmid:26282658	CIViC B1	civic	5215	#29:0	not required
+reduced	ALDH1A2	sensitivity	Tretinoin [c900]	head and neck squamous cell carcinoma	underexpression	#154:10717	pmid:26634247	CIViC D2	civic	1115	#29:0	not required
+increased	DDX43	resistance	Selumetinib [c66939]	uveal melanoma	overexpression	#154:10719	pmid:24899684	CIViC D4	civic	1135	#29:0	not required
+increased	HAVCR2	resistance	PD1 Inhibitor [c124946]	lung non-small cell carcinoma	overexpression	#154:10720	pmid:26883990	CIViC C3	civic	1150	#29:0	not required
+increased	ERBB3	resistance	Gefitinib [c1855]	cancer	overexpression	#154:10721	pmid:24685132	CIViC D4	civic	1153	#29:0	not required
+increased	RB1	resistance	Fluorouracil [c505]	pancreatic adenocarcinoma	overexpression	#154:10730	pmid:11792751	CIViC D2	civic	1324	#29:0	not required
+increased	JUN	sensitivity	irbesartan [c29130]	colorectal adenocarcinoma	overexpression	#154:10744	pmid:27022066	CIViC C2	civic	1633	#29:0	not required
+increased	CCNE1	sensitivity	cdk inhibitor sns-032 [c62523]	ovarian cancer	overexpression	#154:10746	pmid:26204491	CIViC D2	civic	1734	#29:0	not required
+reduced	RRM1	sensitivity	gemcitabine [c66876]	pancreatic cancer	underexpression	#154:10779	pmid:19543324	CIViC B3	civic	5506	#29:0	not required
+reduced	RRM1	sensitivity	Vinorelbine [c1275]	lung non-small cell carcinoma	underexpression	#154:10780	pmid:24647522	CIViC B4	civic	5530	#29:0	not required
+increased	FGF19	sensitivity	Fisogatinib [c123826]	hepatocellular carcinoma	overexpression	#154:10797	pmid:31575541	CIViC B4	civic	7636	#29:0	not required
+increased	CD274	eligibility	A Biomarker-Directed, Open Label, Multi-Centre Phase II Study of Molecular Response Adaptive Immuno-Chemotherapy in Patients With Non-Small Cell Lung Cancer	non-small cell lung cancer	increased protein expression	#154:11015	NA	IPR-C	Null	NA	#30:0	passed
+increased	IGF1R	sensitivity	exemestane + metformin	estrogen-receptor positive breast cancer	increased protein expression	#154:11048	pmid:26706833	IPR-C	Null	NA	#30:14	NA
+increased	CD274	eligibility	A Randomized, Double-blind, Adaptive, Phase II/III Study of GSK3359609 or Placebo in Combination With Pembrolizumab for First-Line Treatment of PD-L1 Positive Recurrent/Metastatic Head and Neck Squamous Cell Carcinoma	head and neck squamous cell carcinoma	increased protein expression	#154:11762	NA	IPR-C	Null	NA	#30:0	passed
+increased	MDM2	response	nivolumab [DB09035]	bladder urothelial carcinoma	increased RNA expression	#154:12581	pmid:33217343	IPR-C	Null	NA	#29:1	initial
+reduced	ATRX	sensitivity	Temozolomide [c1244]	astrocytoma	underexpression	#154:12717	pmid:23904111	CIViC B3	civic	1647	#29:0	not required
+increased	TP53	unfavourable prognosis	patient	renal wilms' tumor	overexpression	#154:13017	pmid:21525573	CIViC B3	civic	8945	#29:0	not required
+increased	EGFR	sensitivity	cetuximab [DB00002]	cutaneous squamous cell carcinoma	overexpression	#154:13033	pmid:31796084	IPR-D	Null	NA	#29:1	initial
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	cancer of the head and neck	increased protein expression	#154:13034	NA	NA	Null	NA	#30:0	initial
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	gastric cancer	increased protein expression	#154:13036	NA	NA	Null	NA	#30:0	initial
+increased	EGFR	no response	Nimotuzumab [c2733]	esophagus squamous cell carcinoma	overexpression	#154:13143	pmid:26459251	CIViC B3	civic	783	#29:0	not required
+increased	EPAS1	unfavourable prognosis	patient	colorectal cancer	overexpression	#154:13147	pmid:20363910	CIViC B3	civic	1033	#29:0	not required
+increased	CCND1	no response	Palbociclib [c49176]	mantle cell lymphoma	overexpression	#154:13156	pmid:22383795	CIViC B2	civic	1536	#29:0	not required
+increased	MET	no resistance	Vemurafenib [c64768]	skin melanoma	overexpression	#154:13228	pmid:23802768	CIViC B3	civic	1584	#29:0	not required
+increased	IGF1R	sensitivity	exemestane + metformin	breast cancer	overexpression	#154:13395	pmid:26706833	CIViC B4	civic	10138	#29:0	not required
+reduced	RRM1	sensitivity	carboplatin + gemcitabine	lung non-small cell carcinoma	underexpression	#154:13396	pmid:19884554	CIViC B3	civic	10143	#29:0	not required
+reduced	ERCC1	sensitivity	Platinum Compound [c1450]	ovary epithelial cancer	underexpression	#154:13412	pmid:30797591	CIViC B3	civic	10146	#29:0	not required
+increased	EGFR	likely sensitivity	cetuximab [DB00002]	prostate cancer	overexpression	#154:13603	pmid:22977195	IPR-C	Null	NA	#30:14	initial
+increased	ABCB1	no resistance	Lorlatinib [c113655]	lung non-small cell carcinoma	overexpression	#154:13606	pmid:26870817	CIViC D3	civic	10016	#29:0	not required
+increased	LAG3	eligibility	Molecular Analysis for Therapy Choice (MATCH)	advanced cancer	increased RNA expression	#154:13624	NA	IPR-E	Null	NA	#30:0	initial
+increased	CD274	sensitivity	atezolizumab [DB11595]	non-small cell lung cancer	increased protein expression	#154:14266	NA	IPR-A	Null	NA	#30:0	initial
+increased	IGF1R	sensitivity	nvp aew54	adrenocortical carcinoma	increased RNA expression	#155:741	pmid:18854392	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+reduced	E2F1	sensitivity	pd 0332991	renal cell carcinoma	reduced RNA expression	#155:809	pmid:23898052	NA	iprkb	3fb18917-78da-4d37-9e52-2fe1b887ebc1	#29:0	pending
+reduced	ARID1A	sensitivity	ATR Inhibitor [c155926]	breast cancer	reduced RNA expression	#155:832	pmid:27958275	NA	iprkb	193bb8c7-befb-44fe-a1c5-6ef7345631c3	#29:0	pending
+increased	GZMA	favourable prognosis	patient	papillary renal cell carcinoma	increased RNA expression	#155:834	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	GZMA	favourable prognosis	patient	brain glioma	increased RNA expression	#155:835	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	prostate cancer	increased RNA expression	#155:836	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	CD68	favourable prognosis	patient	colorectal cancer	increased protein expression	#155:843	pmid:20927778	NA	iprkb	ea16b483-e100-44ae-b7d3-5bf25985390a	#29:0	pending
+increased	HLA-A	favourable prognosis	patient	breast cancer	increased RNA expression	#155:845	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	EPHB2	favourable prognosis	patient	colorectal cancer	increased protein expression	#155:846	pmid:16033834	NA	iprkb	e0ad0806-35aa-483c-b7b8-510242f9901f	#29:0	pending
+increased	ARFGEF3	resistance	tamoxifen [DB00675]	breast cancer	increased RNA expression	#155:996	pmid:24051437	NA	iprkb	a46fc1e6-b067-4864-8b8c-55cc235a3fdf	#29:0	pending
+increased	NRG1	sensitivity	lapatinib + pertuzumab [DB01259 + DB06366]	breast cancer	increased RNA expression	#155:1017	pmid:25691057	NA	iprkb	e0244ca7-a77d-4b5f-93ab-92ec0064cc8c	#29:0	pending
+increased	NRG1	sensitivity	anti erbb3 antibodies + trametinib [ANTI ERBB3 ANTIBODIES + DB08911]	uveal melanoma	increased RNA expression	#155:1160	pmid:25952648	NA	iprkb	a7215406-8123-4d0c-b6a1-ecf1d37e089f	#29:0	pending
+increased	IGF2	no response	cixutumumab + mitotane [DB00648 + DB12250]	adrenocortical carcinoma	increased RNA expression	#155:3103	pmid:18854392;pmid:24849545	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+reduced	E2F1	response	pd 0332991	renal cell carcinoma	reduced RNA expression	#155:3170	pmid:23898052	NA	iprkb	98dcbc26-dc74-47c0-a5e7-c61a0e483ab2	#29:0	pending
+increased	ADGRA2	gain of function	ADGRA2	NA	increased RNA expression	#155:3187	pmid:21071672	NA	iprkb	526b56f8-8161-4fda-b775-548b6d45767d	#29:0	pending
+reduced	ERCC1	sensitivity	cisplatin + parp inhibitor [C62554 + DB00515]	non-small cell lung carcinoma	reduced protein expression	#155:3188	pmid:23275151	NA	iprkb	4f39f8c1-2ef9-4bc4-b58b-55fad095c561	#29:0	pending
+reduced	RAD51	sensitivity	PARP Inhibitor [c62554]	NA	reduced RNA expression	#155:3189	pmid:16912188	NA	iprkb	d9430cdf-3d1c-4eb8-8a11-187b39771e79	#29:0	pending
+increased	GZMA	favourable prognosis	patient	lung adenocarcinoma	increased RNA expression	#155:3196	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	renal clear cell carcinoma	increased RNA expression	#155:3197	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	glioblastoma multiforme	increased RNA expression	#155:3198	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	FOXP3	favourable prognosis	patient	colorectal cancer	increased protein expression	#155:3205	pmid:20927778	NA	iprkb	ea16b483-e100-44ae-b7d3-5bf25985390a	#29:0	pending
+increased	HLA-A	favourable prognosis	patient	kidney cancer	increased RNA expression	#155:3207	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	IFNG	favourable prognosis	patient	melanoma	increased protein expression	#155:3211	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	HOXB13	resistance	tamoxifen [DB00675]	breast cancer	increased RNA expression	#155:3218	pmid:23832664	NA	iprkb	a4e6ab21-e524-4e23-bf31-2f314aede745	#29:0	pending
+increased	TYMS	prognostic indicator	patient	laryngeal carcinoma	increased RNA expression	#155:3371	pmid:24751000	NA	iprkb	ea6675eb-3759-4f1d-92c1-05521a8d4134	#29:0	pending
+increased	NRG1	sensitivity	lapatinib + sgp1 [DB01259 + SGP1]	breast cancer	increased RNA expression	#155:3379	pmid:25691057	NA	iprkb	43502134-4a1b-477c-ab0c-f16e6d288ac8	#29:0	pending
+increased	ERCC1	resistance	cisplatin [DB00515]	bladder cancer	overexpression	#155:4001	pmid:20846399;pmid:21177407	CGI Pre-clinical	cancer genome interpreter	2c601b2d0bfd2ce253e5fe2f6f139b47	#29:0	NA
+increased	IGF1R	recurrent	adrenocortical carcinoma [DOID:3948]	adrenocortical carcinoma	increased RNA expression	#155:5464	pmid:18854392	NA	iprkb	6ecdb95f-fdb1-4d00-bb2c-e51498bb407a	#29:0	pending
+increased	IGF2	recurrent	colon carcinoma [DOID:1520]	colon carcinoma	increased RNA expression	#155:5494	pmid:25089899	NA	iprkb	33ff2ac4-02b1-4637-b336-6b34ab370c09	#29:0	pending
+increased	CLDN4	response	cpe therapy	ovarian cancer	increased RNA expression	#155:5528	pmid:15899825	NA	iprkb	1966d380-eddf-4f22-960c-67045a88b5b2	#29:0	pending
+reduced	RBBP8	sensitivity	olaparib [DB09074]	ovarian carcinoma	reduced RNA expression	#155:5549	pmid:24413181	NA	iprkb	1f89af2a-63a4-4f01-9019-0558ea92b628	#29:0	pending
+reduced	MRE11A	sensitivity	PARP Inhibitor [c62554]	endometrial cancer	reduced RNA expression	#155:5550	pmid:24927325	NA	iprkb	9de3bee0-930a-49c1-bfeb-3260cba508c2	#29:0	pending
+reduced	ARID1A	sensitivity	PARP Inhibitor [c62554]	breast cancer	reduced RNA expression	#155:5553	pmid:26069190	NA	iprkb	f519e412-9f74-48a7-8699-36bf98531f22	#29:0	pending
+increased	GZMA	favourable prognosis	patient	liver cancer	increased RNA expression	#155:5558	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	urinary bladder cancer	increased RNA expression	#155:5559	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	MST1R	prognostic indicator	patient	gastroesophageal junction adenocarcinoma	increased protein expression	#155:5569	pmid:21543897	NA	iprkb	ac12701f-a43a-442b-be24-7509b504a4c0	#29:0	pending
+increased	CPS1	unfavourable prognosis	patient	colorectal cancer	increased protein expression	#155:5570	pmid:25099619	NA	iprkb	35fef358-80da-4a68-a738-fbb62934c5ac	#29:0	pending
+increased	IFNG	favourable prognosis	patient	lung carcinoma	increased protein expression	#155:5573	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+reduced	IFNGR1	resistance	anti ctla4	melanoma	reduced RNA expression	#155:5574	pmid:27667683	NA	iprkb	b94b8319-5a79-43e2-8aed-d7a1e55aff4a	#29:0	pending
+reduced	FAAP20	sensitivity	mitomycin c	NA	reduced RNA expression	#155:5579	pmid:22343915	NA	iprkb	d8d3eef3-0049-44df-b5d6-d53dea8219ee	#29:0	pending
+increased	CDK4	sensitivity	palbociclib [DB09073]	sarcoma	increased protein expression	#155:5582	pmid:26528855	NA	iprkb	9d7ea9a8-270b-4255-a1e3-7827fb8e1cc8	#29:0	pending
+increased	MDK	resistance	cisplatin [DB00515]	cervical cancer	increased RNA expression	#155:5591	pmid:16644108	NA	iprkb	e19baf49-ceeb-4a8d-a49b-f43d7ab424d4	#29:0	pending
+reduced	PTEN	sensitivity	mtor inhibitor [c2201]	breast cancer	reduced RNA expression	#155:5596	pmid:18332865	NA	iprkb	9ac3f564-46c1-456d-9c7e-9a69d386f932	#29:0	pending
+increased	CCNA2	resistance	tamoxifen [DB00675]	breast cancer	increased RNA expression	#155:5728	pmid:24622579	NA	iprkb	b892b835-f2c6-4ba0-b099-2b2dad052a49	#29:0	pending
+increased	CD274	response	nivolumab [DB09035]	renal cancer	overexpression	#155:6360	pmid:25452452	CGI Early trials	cancer genome interpreter	6714dcb383d6a88e63e05912cf7dbac9	#29:0	NA
+reduced	CRBN	resistance	lenalidomide [DB00480]	myeloma	underexpression	#155:6369	pmid:21860026	CGI Case report	cancer genome interpreter	cf6cdd7defe630c03b37bbf0b9be271d	#29:0	NA
+increased	IGF2	no response	cixutumumab [DB12250]	adrenocortical carcinoma	increased RNA expression	#155:7826	pmid:18854392;pmid:24849545	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+increased	IGF2	recurrent	liposarcoma [DOID:3382]	liposarcoma	increased RNA expression	#155:7856	pmid:25089899	NA	iprkb	33ff2ac4-02b1-4637-b336-6b34ab370c09	#29:0	pending
+increased	CLDN4	sensitivity	cpe therapy	pancreatic cancer	increased RNA expression	#155:7890	pmid:11522752	NA	iprkb	c48c4f85-20bf-4c3f-8bb8-5552b3a24b73	#29:0	pending
+increased	CDK6	resistance	fulvestrant [DB00947]	breast cancer	increased RNA expression	#155:7896	pmid:27748766	NA	iprkb	d09b2673-db84-48cb-8e00-c2f539e24407	#29:0	pending
+reduced	RBBP8	sensitivity	camptothecin [DB04690]	osteosarcoma	reduced RNA expression	#155:7911	pmid:21052091	NA	iprkb	e4357d08-fe2d-4057-9dfd-c75cc2b4c1d3	#29:0	pending
+reduced	ARID1A	sensitivity	PARP Inhibitor [c62554]	colon cancer	reduced RNA expression	#155:7915	pmid:26069190	NA	iprkb	f519e412-9f74-48a7-8699-36bf98531f22	#29:0	pending
+increased	GZMA	favourable prognosis	patient	melanoma	increased RNA expression	#155:7920	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	breast cancer	increased RNA expression	#155:7921	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	CD8A	favourable prognosis	patient	colorectal cancer	increased protein expression	#155:7928	pmid:20927778	NA	iprkb	ea16b483-e100-44ae-b7d3-5bf25985390a	#29:0	pending
+increased	MET	prognostic indicator	patient	gastroesophageal junction adenocarcinoma	increased protein expression	#155:7931	pmid:21543897	NA	iprkb	ac12701f-a43a-442b-be24-7509b504a4c0	#29:0	pending
+increased	CD274	sensitivity	nivolumab [DB09035]	non-small cell lung carcinoma	increased protein expression	#155:7932	pmid:28529902	NA	iprkb	94b93d91-3715-4828-96fc-1cc39444a408	#29:0	pending
+increased	IFNG	favourable prognosis	patient	pancreatic cancer	increased protein expression	#155:7935	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	ERBB2	resistance	monotherapy trastuzumab	breast cancer	increased RNA expression	#155:7954	pmid:17096862	NA	iprkb	92ba2732-f865-474e-a752-4ec9e30224fb	#29:0	pending
+reduced	ERCC1	favourable prognosis	patient	colorectal cancer	reduced RNA expression	#155:8246	pmid:26083491	NA	iprkb	cde32424-8978-4279-a401-04624dfc643a	#29:0	pending
+reduced	CRBN	resistance	pomalidomide [DB08910]	myeloma	underexpression	#155:8731	pmid:21860026	CGI Case report	cancer genome interpreter	7c9e7af5c1647e8556b1f725fb92d71d	#29:0	NA
+increased	ERBB2	response	trastuzumab [DB00072]	breast adenocarcinoma	overexpression	#155:8738	NA	CGI FDA guidelines	cancer genome interpreter	6fd5b9dcd8004687ec05596ac93e718d	#29:0	NA
+increased	FOLR1	sensitivity	imgn853 [c102566]	endometrial carcinoma	increased RNA expression	#155:9565	NA	PROFYLE T3	Null	NA	#30:14	NA
+increased	PGR	sensitivity	medroxyprogesterone acetate+paraplatin+paclitaxel	ovarian epithelial tumor	increased expression	#155:9567	pmid:18592789	OncoKB 4	Null	NA	#29:1	NA
+increased	ESR1	sensitivity	letrozole [DB01006]	ovarian cancer, other	increased expression	#155:9568	pmid:12114425	OncoKB 3A	Null	NA	#29:1	NA
+increased	DPYD	resistance	fluorouracil [DB00544]	colorectal adenocarcinoma	increased expression	#155:9570	pmid:17179731	OncoKB 4	Null	NA	#29:1	NA
+increased	SIRT1	resistance	Niacinamide [c2327]	pancreatic cancer	overexpression	#155:9646	pmid:24088390	CIViC D1	civic	1294	#29:0	not required
+increased	AKT3	sensitivity	Pan-AKT Kinase Inhibitor GSK690693 [c71711]	triple-receptor negative breast cancer	overexpression	#155:9658	pmid:24335962	CIViC E4	civic	1923	#29:0	not required
+increased	CTAG2	sensitivity	Autologous Anti-NY-ESO-1/LAGE-1 TCR-transduced c259 T Lymphocytes GSK3377794 [c121379]	multiple myeloma	overexpression	#155:9661	pmid:26193344	CIViC B3	civic	2941	#29:0	not required
+increased	ZEB1	resistance	oxaliplatin [DB00526]	colon cancer	increased expression	#155:9725	pmid:29151941	PROFYLE T4	Null	NA	#30:3	NA
+increased	TBX21	favourable prognosis	colorectal cancer [DOID:9256]	colorectal cancer	increased RNA expression	#155:9730	pmid:17008531	NA	Null	NA	#30:0	NA
+increased	CLDN4	sensitivity	C-CPE + carboplatin	ovary epithelial cancer	increased RNA expression	#155:9735	pmid:21123456	NA	Null	NA	#30:0	NA
+increased	CCND1	unfavourable prognosis	patient	head and neck squamous cell carcinoma	overexpression	#155:9769	pmid:16309541	CIViC B4	civic	357	#29:0	not required
+increased	CCNE1	unfavourable prognosis	patient	gastric adenosquamous carcinoma	overexpression	#155:9770	pmid:10224221	CIViC B4	civic	364	#29:0	not required
+increased	RET	sensitivity	Vandetanib [c2737]	breast cancer	overexpression	#155:9804	pmid:26686064	CIViC D2	civic	740	#29:0	not required
+increased	EGFR	unfavourable prognosis	patient	esophagus squamous cell carcinoma	overexpression	#155:9808	pmid:26459251	CIViC B3	civic	784	#29:0	not required
+increased	PTP4A3	sensitivity	Cetuximab [c1723]	colorectal cancer	overexpression	#155:9822	pmid:23867504	CIViC D3	civic	902	#29:0	not required
+increased	TYMS	resistance	Pemetrexed [c61614]	lung non-small cell carcinoma	overexpression	#155:9824	pmid:23060591	CIViC B3	civic	922	#29:0	not required
+increased	TIMP1	resistance	Paclitaxel [c1411]	breast cancer	overexpression	#155:9825	pmid:22544540	CIViC B2	civic	927	#29:0	not required
+increased	ABCC10	resistance	Paclitaxel [c1411]	lung non-small cell carcinoma	overexpression	#155:9829	pmid:18445659	CIViC D3	civic	952	#29:0	not required
+reduced	STAG2	favourable prognosis	patient	bladder carcinoma	underexpression	#155:9833	pmid:26838030	CIViC B2	civic	984	#29:0	not required
+reduced	KRT18	unfavourable prognosis	patient	prostate cancer	underexpression	#155:9842	pmid:26892177	CIViC D2	civic	1061	#29:0	not required
+increased	B4GALT1	unfavourable prognosis	patient	renal cell carcinoma	overexpression	#155:9867	pmid:27092876	CIViC B3	civic	1278	#29:0	not required
+reduced	ATM	unfavourable prognosis	patient	chronic lymphocytic leukemia	underexpression	#155:9902	pmid:9788599	CIViC B3	civic	1564	#29:0	not required
+increased	ETV4	unfavourable prognosis	patient	prostate cancer	overexpression	#155:9917	pmid:25544710	CIViC B3	civic	1658	#29:0	not required
+reduced	VPS37A	resistance	Cetuximab [c1723]	ovarian cancer	underexpression	#155:9952	pmid:22016507	CIViC D3	civic	1981	#29:0	not required
+reduced	ARID1A	unfavourable prognosis	patient	stomach cancer	underexpression	#155:10057	pmid:22808142	CIViC D4	civic	5675	#29:0	not required
+increased	IL6	resistance	Bazedoxifene [c73598]	rhabdomyosarcoma	overexpression	#155:10123	pmid:28672024	CIViC D2	civic	7956	#29:0	not required
+increased	PLK1	unfavourable prognosis	patient	glioblastoma multiforme	overexpression	#155:10138	pmid:32180229	CIViC B2	civic	8005	#29:0	not required
+increased	FOXC2	resistance	Oxaliplatin [c1181]	colorectal cancer	overexpression	#155:10142	pmid:32110058	CIViC D4	civic	8084	#29:0	not required
+increased	MIR21	resistance	Cisplatin [c376]	lung non-small cell carcinoma	overexpression	#155:10143	pmid:22237007	CIViC D3	civic	8110	#29:0	not required
+increased	AURKA	resistance	Paclitaxel [c1411]	cervical adenocarcinoma	overexpression	#155:10153	pmid:12559175	CIViC D3	civic	457	#29:0	not required
+increased	CD274	sensitivity	atezolizumab [DB11595]	triple-receptor negative breast cancer	increased protein expression	#155:10446	NA	IPR-A	Null	NA	#30:0	passed
+reduced	ERCC1	sensitivity	cisplatin [DB00515]	epithelial ovarian cancer	reduced protein expression	#155:10453	pmid:30797591	CIViC D	Null	NA	#32:7	initial
+increased	HIF1A	unfavourable prognosis	patient	colorectal cancer	overexpression	#155:10488	pmid:20363910	CIViC B3	civic	1032	#29:0	not required
+increased	PTTG1	unfavourable prognosis	patient	meningioma	overexpression	#155:10489	pmid:26894859	CIViC B2	civic	1053	#29:0	not required
+increased	BCL2L1	resistance	gemcitabine [DB00441]	ovarian carcinoma	increased protein expression	#155:10534	pmid:15661210	CIViC D	Null	NA	#32:7	initial
+increased	ERBB2	sensitivity	neratinib [DB11828]	breast cancer	increased protein expression	#155:10536	NA	IPR-A	Null	NA	#30:0	NA
+increased	BCL2L1	resistance	paclitaxel [DB01229]	ovarian carcinoma	increased protein expression	#155:10542	pmid:11857368	CIViC D	Null	NA	#32:7	initial
+reduced	SMARCA4	sensitivity	cisplatin + vinorelbine	lung non-small cell carcinoma	underexpression	#155:10549	pmid:26671993	CIViC B3	civic	837	#29:0	not required
+increased	CDK6	sensitivity	fulvestrant + palbociclib	estrogen-receptor positive breast cancer	overexpression	#155:10568	pmid:27252418	CIViC D2	civic	1527	#29:0	not required
+increased	DCK	sensitivity	gemcitabine [DB00441]	pancreatic adenocarcinoma	increased protein expression	#155:10605	pmid:22705007	CIViC B	Null	NA	#32:7	initial
+increased	RRM1	resistance	gemcitabine [DB00441]	pancreatic cancer	increased protein expression	#155:10606	pmid:25837929	CIViC D	Null	NA	#32:7	initial
+increased	IGF2	sensitivity	Docetaxel [c1526]	prostate cancer	overexpression	#155:10670	pmid:25670080	CIViC D3	civic	414	#29:0	not required
+increased	EGFR	sensitivity	epidermal growth factor receptor tyrosine kinase inhibitor [c2167]	lung non-small cell carcinoma	overexpression	#155:10676	pmid:22056021	CIViC B4	civic	693	#29:0	not required
+reduced	VEGFA	sensitivity	bevacizumab + fluorouracil + irinotecan + levoleucovorin	colorectal cancer	underexpression	#155:10685	pmid:25973082	CIViC B2	civic	818	#29:0	not required
+reduced	CIP2A	sensitivity	gemcitabine [c66876]	pancreatic ductal adenocarcinoma	underexpression	#155:10704	pmid:26894380	CIViC D3	civic	1118	#29:0	not required
+increased	HAVCR2	sensitivity	anti-tim-3 monoclonal antibody + pd1 inhibitor	lung non-small cell carcinoma	overexpression	#155:10707	pmid:26883990	CIViC D3	civic	1151	#29:0	not required
+increased	RB1	resistance	Mitomycin [c1820]	pancreatic adenocarcinoma	overexpression	#155:10717	pmid:11792751	CIViC D2	civic	1324	#29:0	not required
+increased	FOS	sensitivity	irbesartan [c29130]	colon adenocarcinoma	overexpression	#155:10731	pmid:27022066	CIViC C2	civic	1634	#29:0	not required
+reduced	SMARCB1	sensitivity	Tazemetostat [c107506]	synovial sarcoma	underexpression	#155:10733	pmid:27391784	CIViC D2	civic	1739	#29:0	not required
+reduced	MTAP	sensitivity	pyrimidine antagonist [c1557]	breast cancer	underexpression	#155:10741	pmid:26751376	CIViC D1	civic	1980	#29:0	not required
+increased	ERBB2	sensitivity	lapatinib [c26653]	head and neck squamous cell carcinoma	overexpression	#155:10743	pmid:28061634	CIViC C2	civic	1992	#29:0	not required
+increased	ERBB2	sensitivity	Trastuzumab Emtansine [c82492]	her2-receptor positive breast cancer	overexpression	#155:10764	pmid:28526536	CIViC B4	civic	4840	#29:0	not required
+reduced	RRM1	sensitivity	gemcitabine [c66876]	pancreatic cancer	underexpression	#155:10766	pmid:17131328	CIViC B3	civic	5508	#29:0	not required
+reduced	RRM1	sensitivity	Vinorelbine [c1275]	lung non-small cell carcinoma	underexpression	#155:10767	pmid:23038758	CIViC B3	civic	5599	#29:0	not required
+increased	ERBB2	sensitivity	paclitaxel + trastuzumab	salivary gland cancer	overexpression	#155:10774	pmid:23826550	CIViC C2	civic	6170	#29:0	not required
+increased	CD274	eligibility	EA5163/S1709 INSIGNA : A Randomized, Phase III Study of Firstline Immunotherapy Alone or in Combination With Chemotherapy in Induction/Maintenance or Postprogression in Advanced Nonsquamous Non-Small Cell Lung Cancer (NSCLC) With Immunobiomarker SIGNature-Driven Analysis	non-small cell lung cancer	increased protein expression	#155:11002	NA	IPR-C	Null	NA	#30:0	passed
+increased	KAT6B	sensitivity	anthracyclines [c1594]	breast cancer	increased RNA expression	#155:11031	pmid:31700186	IPR-D	Null	NA	#30:14	NA
+increased	EGFR	eligibility	A Biomarker-Directed, Open Label, Multi-Centre Phase II Study of Molecular Response Adaptive Immuno-Chemotherapy in Patients With Non-Small Cell Lung Cancer	non-small cell lung cancer	wildtype	#155:11746	NA	IPR-C	Null	NA	#30:0	passed
+increased	CD274	eligibility	EA5163/S1709 INSIGNA : A Randomized, Phase III Study of Firstline Immunotherapy Alone or in Combination With Chemotherapy in Induction/Maintenance or Postprogression in Advanced Nonsquamous Non-Small Cell Lung Cancer (NSCLC) With Immunobiomarker SIGNature-Driven Analysis	non-small cell lung cancer	increased protein expression	#155:11747	NA	IPR-C	Null	NA	#30:0	passed
+increased	ACTL6A	resistance	Cisplatin [c376]	lung adenocarcinoma	overexpression	#155:12994	pmid:33408251	CIViC D4	civic	8977	#29:0	not required
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	ovarian cancer	increased protein expression	#155:13010	NA	NA	Null	NA	#30:0	initial
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	synovial sarcoma	increased protein expression	#155:13012	NA	NA	Null	NA	#30:0	initial
+increased	FGFR3	sensitivity	tyrosine kinase inhibitor su5402 [c1725]	bladder carcinoma	overexpression	#155:13040	pmid:21119661	CIViC D3	civic	803	#29:0	not required
+increased	ERBB2	sensitivity	pembrolizumab [DB09037]	adenocarcinoma of the gastroesophageal junction	increased protein expression	#155:13175	NA	IPR-A	Null	NA	#30:0	initial
+increased	LYN	no resistance	Dasatinib [c38713]	chronic myeloid leukemia	overexpression	#155:13231	pmid:18191450	CIViC D3	civic	7874	#29:0	not required
+increased	SLC29A1	sensitivity	gemcitabine [c66876]	pancreatic adenocarcinoma	overexpression	#155:13354	pmid:22705007	CIViC B4	civic	10145	#29:0	not required
+increased	IGF2	sensitivity	mitotane + nvp aew54 [DB00648 + NVP AEW54]	adrenocortical carcinoma	increased RNA expression	#156:741	pmid:18854392	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+increased	PGR	sensitivity	exemestane [DB00990]	breast cancer	increased RNA expression	#156:746	pmid:21422407	NA	iprkb	9a431616-8826-475e-a540-2cfc28975446	#29:0	pending
+increased	KRAS	resistance	cetuximab [DB00002]	colorectal cancer	increased RNA expression	#156:753	pmid:22722830	NA	iprkb	bbe4a4ae-372d-4c10-b5b4-cd50fe94e1c0	#29:0	pending
+increased	KLK13	prognostic indicator	patient	ovary epithelial cancer	increased RNA expression	#156:803	pmid:19707197	NA	iprkb	93b01e7c-7e14-403f-adfa-a47b85cbf4c1	#29:0	pending
+reduced	BRCC3	sensitivity	ionizing radiation	NA	reduced RNA expression	#156:825	pmid:14636569	NA	iprkb	2087356e-ce3e-4a1f-afc3-d3f0b3353020	#29:0	pending
+increased	GZMA	favourable prognosis	patient	colorectal cancer	increased RNA expression	#156:834	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	lung squamous cell carcinoma	increased RNA expression	#156:835	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	FOXP3	favourable prognosis	patient	glioblastoma multiforme	increased protein expression	#156:840	pmid:28680758	NA	iprkb	700c2ddd-c017-44cd-9b5b-5b87b7cdf5ee	#29:0	pending
+increased	CD8A	favourable prognosis	patient	lung cancer	increased RNA expression	#156:845	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	IFNG	favourable prognosis	patient	urinary bladder cancer	increased protein expression	#156:849	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	AURKA	resistance	paclitaxel [DB01229]	NA	increased RNA expression	#156:859	pmid:12559175	NA	iprkb	17a9300a-cfd8-422f-adab-f38f13d82f61	#29:0	pending
+increased	CCND3	resistance	palbociclib [DB09073]	breast cancer	increased RNA expression	#156:907	pmid:28270497	NA	iprkb	f333958d-657d-45a3-a3ef-2327b15add48	#29:0	pending
+increased	IGF1R	sensitivity	mitotane + nvp aew54 [DB00648 + NVP AEW54]	adrenocortical carcinoma	increased RNA expression	#156:3103	pmid:18854392	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+increased	CES2	sensitivity	irinotecan [DB00762]	pancreatic adenocarcinoma	increased RNA expression	#156:3143	pmid:26025324	NA	iprkb	b8f32bd2-3f97-44ae-953c-7e0e3cecdb69	#29:0	pending
+increased	KLK6	prognostic indicator	patient	ovary epithelial cancer	increased RNA expression	#156:3165	pmid:19707197	NA	iprkb	b7dc2bfc-c7b5-4c4c-804f-96d811df4395	#29:0	pending
+reduced	BRCC3	sensitivity	temozolomide [DB00853]	brain glioma	reduced RNA expression	#156:3187	pmid:25337721	NA	iprkb	30fb0042-e0e8-4db1-92dc-b176853c079a	#29:0	pending
+increased	GZMA	favourable prognosis	patient	stomach cancer	increased RNA expression	#156:3196	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	cervical cancer	increased RNA expression	#156:3197	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+reduced	PTEN	resistance	pembrolizumab [DB09037]	melanoma	reduced protein expression	#156:3202	pmid:26645196	NA	iprkb	c05acee9-817a-42f7-a139-8249e5d73e18	#29:0	pending
+increased	CTLA4	sensitivity	ipilimumab [DB06186]	melanoma	increased RNA expression	#156:3203	pmid:26359337	IPR-C	iprkb	d0362e6c-d746-4de7-97c0-16d579434532	#29:0	pending
+increased	CD8A	favourable prognosis	patient	ovarian cancer	increased RNA expression	#156:3207	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	IL21	favourable prognosis	patient	colorectal cancer	increased RNA expression	#156:3208	pmid:24138885	NA	iprkb	ee8cf40b-eb80-4f67-b7fb-af572522ee31	#29:0	pending
+increased	IFNG	favourable prognosis	patient	ovarian cancer	increased protein expression	#156:3211	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+increased	HLA-A	sensitivity	nivolumab [DB09035]	melanoma	increased RNA expression	#156:3212	pmid:27757299	NA	iprkb	5f70ec55-bf4a-4ac4-add3-5ea0f8837f8e	#29:0	pending
+increased	AURKB	resistance	paclitaxel [DB01229]	NA	increased RNA expression	#156:3221	pmid:12559175	NA	iprkb	42d78bef-5243-4bbe-b26c-d3f8fd659eeb	#29:0	pending
+increased	MDK	resistance	5 fu	stomach cancer	increased RNA expression	#156:3229	pmid:16644108	NA	iprkb	e19baf49-ceeb-4a8d-a49b-f43d7ab424d4	#29:0	pending
+increased	CDKN2D	resistance	palbociclib [DB09073]	breast cancer	increased RNA expression	#156:3269	pmid:28270497	NA	iprkb	f333958d-657d-45a3-a3ef-2327b15add48	#29:0	pending
+increased	ERBB2	response	trastuzumab [DB00072]	gastroesophageal junction adenocarcinoma	overexpression	#156:4014	NA	CGI FDA guidelines	cancer genome interpreter	3aa4a0b1c1a5c2769944f683f510a527	#29:0	NA
+increased	IGF2	sensitivity	nvp aew54	adrenocortical carcinoma	increased RNA expression	#156:5464	pmid:18854392	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+increased	PRAME	likely sensitivity	bpx 701	neuroblastoma	increased RNA expression	#156:5474	pmid:21771875	NA	iprkb	6146b073-1de7-47f2-97fe-b90bacc6f05b	#29:0	pending
+reduced	ESR1	resistance	tamoxifen [DB00675]	breast cancer	reduced RNA expression	#156:5534	pmid:27748766	NA	iprkb	54ef490a-db9b-4157-b9df-76b9c98abcc0	#29:0	pending
+reduced	RAD50	sensitivity	cisplatin [DB00515]	ovarian cancer	reduced RNA expression	#156:5550	pmid:27016230	NA	iprkb	9fea407e-7439-450f-b1a1-5252b5bc8b72	#29:0	pending
+increased	GZMA	favourable prognosis	patient	prostate cancer	increased RNA expression	#156:5558	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	thyroid cancer	increased RNA expression	#156:5559	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	FCGR3A	favourable prognosis	patient	colorectal cancer	increased protein expression	#156:5566	pmid:20927778	NA	iprkb	ea16b483-e100-44ae-b7d3-5bf25985390a	#29:0	pending
+increased	HLA-A	favourable prognosis	patient	lung cancer	increased RNA expression	#156:5568	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	CD8A	favourable prognosis	patient	colorectal cancer	increased protein expression	#156:5571	pmid:17008531	NA	iprkb	c911faf1-1870-48e3-a927-84e96b205dd4	#29:0	pending
+increased	IFNG	favourable prognosis	patient	bladder carcinoma	increased protein expression	#156:5573	pmid:22419253	NA	iprkb	177d88e8-110a-4c15-9639-9fef142e33f7	#29:0	pending
+reduced	MAD2L2	resistance	olaparib [DB09074]	breast cancer	reduced RNA expression	#156:5574	pmid:25799992	NA	iprkb	d85f287c-9342-4f83-a9f1-74aa8a872b02	#29:0	pending
+increased	DLL3	sensitivity	rovalpituzumab tesirine [DB13017]	lung small cell carcinoma	increased RNA expression	#156:5634	a dll3-targeted antibody-drug conjugate eradicates high-grade pulmonary neuroendocrine tumor-initiating cells in vivo	NA	iprkb	88dd6255-3539-47c1-b212-bd19ed41838e	#29:0	pending
+increased	SNORD50A	favourable prognosis	patient	acute myeloid leukemia	increased RNA expression	#156:5740	pmid:25646775	NA	iprkb	debe1977-9297-46a5-ade3-10d13bab1e62	#29:0	pending
+increased	NRG1	resistance	mek inhibitor	uveal melanoma	increased RNA expression	#156:5883	pmid:25952648	NA	iprkb	28c3fa6c-3198-47db-9341-bba4bd9718cb	#29:0	pending
+reduced	TYMS	reduced function	TYMS	colorectal cancer	reduced RNA expression	#156:5884	pmid:26083491	NA	iprkb	49831308-808c-435e-bbe7-2017bc64c3e4	#29:0	pending
+increased	SNORD50A	favourable prognosis	patient	acute myeloid leukemia	increased RNA expression	#156:5951	pmid:25646775	NA	iprkb	debe1977-9297-46a5-ade3-10d13bab1e62	#29:0	pending
+increased	EGFR	resistance	panitumumab [DB01269]	colorectal adenocarcinoma	overexpression	#156:6376	NA	CGI FDA guidelines	cancer genome interpreter	0ed33390012b1ada18a9974f66b3538b	#29:0	NA
+increased	ERBB2	sensitivity	lapatinib + trastuzumab [DB00072 + DB01259]	breast cancer	increased RNA expression	#156:7816	pmid:22153890	NA	iprkb	36cd18c4-d389-4950-9846-0bfc8af4a896	#29:0	pending
+increased	IGF1R	sensitivity	nvp aew54	adrenocortical carcinoma	increased RNA expression	#156:7826	pmid:18854392	NA	iprkb	3025e817-5360-4425-b18e-21ae3b1cb9e0	#29:0	pending
+reduced	NFKB1	acquired resistance	alkylating agents	NA	reduced RNA expression	#156:7836	pmid:22152481	NA	iprkb	5f1bb891-d9e1-48c2-b016-9c6e267409e2	#29:0	pending
+reduced	CDKN2A	sensitivity	pd 0332991	renal cell carcinoma	reduced RNA expression	#156:7893	pmid:23898052	NA	iprkb	fdf1250e-ecad-4563-b58c-a8e4efbcd618	#29:0	pending
+reduced	EME1	sensitivity	cisplatin [DB00515]	NA	reduced protein expression	#156:7911	pmid:19267403	NA	iprkb	2e409efe-d41c-4989-8d3d-0a2793f707f9	#29:0	pending
+reduced	RAD50	sensitivity	PARP Inhibitor [c62554]	ovarian cancer	reduced RNA expression	#156:7912	pmid:27016230	NA	iprkb	9fea407e-7439-450f-b1a1-5252b5bc8b72	#29:0	pending
+reduced	ARID1A	sensitivity	ATR Inhibitor [c155926]	colon cancer	reduced RNA expression	#156:7917	pmid:27958275	NA	iprkb	193bb8c7-befb-44fe-a1c5-6ef7345631c3	#29:0	pending
+increased	GZMA	favourable prognosis	patient	renal clear cell carcinoma	increased RNA expression	#156:7919	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	GZMA	favourable prognosis	patient	glioblastoma multiforme	increased RNA expression	#156:7920	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+increased	PRF1	favourable prognosis	patient	ovarian cancer	increased RNA expression	#156:7921	pmid:25594174	NA	iprkb	836a0aef-302f-4f79-bd11-8970c951db85	#29:0	pending
+reduced	MSH3	no resistance	cisplatin [DB00515]	NA	reduced RNA expression	#156:7922	pmid:26519826	NA	iprkb	bd5084f7-ac11-4556-ba12-18c117e24d56	#29:0	pending
+increased	CD8A	response	tremelimumab [DB11771]	melanoma	increased protein expression	#156:7927	pmid:19118070	NA	iprkb	ca84b485-0b48-429b-b130-068cab16a434	#29:0	pending
+increased	TNFRSF4	favourable prognosis	patient	colorectal cancer	increased protein expression	#156:7928	pmid:20927778	NA	iprkb	ea16b483-e100-44ae-b7d3-5bf25985390a	#29:0	pending
+increased	HLA-A	favourable prognosis	patient	ovarian cancer	increased RNA expression	#156:7930	pmid:24782321	NA	iprkb	cb5f856d-0a7b-4a5c-aa19-6d5a16b61733	#29:0	pending
+increased	ZNF703	prognostic indicator	patient	colorectal cancer	increased protein expression	#156:7931	pmid:25017610	NA	iprkb	f74f41b9-eac4-41a2-8311-8323b1168ffc	#29:0	pending
+increased	GZMB	favourable prognosis	patient	colorectal cancer	increased protein expression	#156:7933	pmid:17008531	NA	iprkb	c911faf1-1870-48e3-a927-84e96b205dd4	#29:0	pending
+increased	PDCD1LG2	favourable prognosis	patient	NA	increased protein expression	#156:7934	pmid:27999753	NA	iprkb	ba07005b-20fc-4c54-bbae-41075101a059	#29:0	pending
+reduced	MAD2L2	resistance	azd2461 [c95201]	breast cancer	reduced RNA expression	#156:7936	pmid:25799992	NA	iprkb	d85f287c-9342-4f83-a9f1-74aa8a872b02	#29:0	pending
+increased	PDCD1LG2	diagnostic indicator	primary mediastinal b-cell lymphoma [DOID:0080210]	primary mediastinal b-cell lymphoma	increased RNA expression	#156:7940	pmid:28369778	NA	iprkb	879651c2-e43e-41d4-831c-61c3456c9470	#29:0	pending
+increased	DLL3	sensitivity	rovalpituzumab tesirine [DB13017]	large cell neuroendocrine carcinoma	increased RNA expression	#156:7996	a dll3-targeted antibody-drug conjugate eradicates high-grade pulmonary neuroendocrine tumor-initiating cells in vivo	NA	iprkb	88dd6255-3539-47c1-b212-bd19ed41838e	#29:0	pending
+increased	NRG1	resistance	lapatinib [DB01259]	breast cancer	increased RNA expression	#156:8102	pmid:25691057	NA	iprkb	8a791ef5-d00a-42d5-9aef-b4e11b12a23e	#29:0	pending
+increased	HGF	sensitivity	anti c met antibodies + trametinib [ANTI C MET ANTIBODIES + DB08911]	uveal melanoma	increased RNA expression	#156:8245	pmid:25952648	NA	iprkb	8c7abd31-6a58-40e2-a8ce-f1e79a1473ea	#29:0	pending
+reduced	TYMS	sensitivity	folfox	colorectal cancer	reduced RNA expression	#156:8246	pmid:26083491	NA	iprkb	e9bca2c7-9d35-49fd-8c70-3c5562148eee	#29:0	pending
+increased	RAF1	response	sorafenib [DB00398]	osteosarcoma	overexpression	#156:8729	pmid:24375110	CGI Pre-clinical	cancer genome interpreter	33a9c71aca86a43515ba619d10ac0965	#29:0	NA
+increased	ESR1	sensitivity	tamoxifen [DB00675]	ovarian epithelial tumor	increased expression	#156:9559	pmid:2070324	OncoKB 4	Null	NA	#29:1	NA
+increased	ZEB1	unfavourable prognosis	patient	colon cancer	increased expression	#156:9621	pmid:29151941	NA	Null	NA	#30:3	NA
+increased	CD3G	favourable prognosis	colorectal cancer [DOID:9256]	colorectal cancer	increased protein expression	#156:9717	pmid:17008531	NA	Null	NA	#30:0	NA
+increased	CLDN4	sensitivity	C-CPE + taxol	ovary epithelial cancer	increased RNA expression	#156:9722	pmid:21123456	NA	Null	NA	#30:0	NA
+increased	CCND2	unfavourable prognosis	patient	stomach cancer	overexpression	#156:9755	pmid:10547574	CIViC D4	civic	360	#29:0	not required
+increased	CCNE1	unfavourable prognosis	patient	gastric adenosquamous carcinoma	overexpression	#156:9756	pmid:10224221	CIViC B4	civic	365	#29:0	not required
+increased	BCL2	unfavourable prognosis	patient	diffuse large b-cell lymphoma	overexpression	#156:9762	pmid:9207459	CIViC B4	civic	423	#29:0	not required
+increased	NCOA3	unfavourable prognosis	patient	breast cancer	overexpression	#156:9770	pmid:23322234	CIViC B3	civic	493	#29:0	not required
+increased	MYD88	resistance	Paclitaxel [c1411]	breast cancer	overexpression	#156:9789	pmid:26596839	CIViC D2	civic	734	#29:0	not required
+increased	RIT1	unfavourable prognosis	patient	endometrial cancer	overexpression	#156:9790	pmid:26617739	CIViC B3	civic	741	#29:0	not required
+reduced	SMARCA4	unfavourable prognosis	patient	lung non-small cell carcinoma	underexpression	#156:9801	pmid:26671993	CIViC B3	civic	838	#29:0	not required
+increased	AURKA	resistance	Cisplatin [c376]	lung non-small cell carcinoma	overexpression	#156:9804	pmid:25082261	CIViC B4	civic	871	#29:0	not required
+increased	EGFR	sensitivity	Gefitinib [c1855]	lung non-small cell carcinoma	overexpression	#156:9815	pmid:16707605	CIViC B3	civic	954	#29:0	not required
+reduced	MIR218-1	unfavourable prognosis	patient	pancreatic cancer	underexpression	#156:9841	pmid:26662432	CIViC D3	civic	1184	#29:0	not required
+increased	MET	resistance	Vemurafenib [c64768]	skin melanoma	overexpression	#156:9890	pmid:26359985	CIViC B4	civic	1581	#29:0	not required
+reduced	STAG2	resistance	Vemurafenib [c64768]	melanoma	underexpression	#156:9903	pmid:27500726	CIViC D4	civic	1659	#29:0	not required
+increased	NTRK1	favourable prognosis	patient	neuroblastoma	overexpression	#156:9936	pmid:8441429	CIViC B4	civic	1972	#29:0	not required
+increased	TP53	unfavourable prognosis	patient	ovarian cancer	overexpression	#156:9966	pmid:11595686	CIViC B3	civic	2697	#29:0	not required
+reduced	MGMT	sensitivity	Temozolomide [c1244]	glioblastoma multiforme	underexpression	#156:9977	pmid:17442989	CIViC B3	civic	2899	#29:0	not required
+increased	MET	resistance	Trametinib [c77908]	uveal melanoma	overexpression	#156:9991	pmid:25952648	CIViC D3	civic	3038	#29:0	not required
+reduced	ARID1A	unfavourable prognosis	patient	clear cell renal cell carcinoma	underexpression	#156:10043	pmid:25628030	CIViC B3	civic	5676	#29:0	not required
+increased	PDGFRA	sensitivity	Sunitinib [c71622]	rhabdomyosarcoma	overexpression	#156:10109	pmid:19366796	CIViC D3	civic	7988	#29:0	not required
+increased	LYN	resistance	Nilotinib [c48375]	chronic myeloid leukemia	overexpression	#156:10114	pmid:18191450	CIViC D1	civic	7875	#29:0	not required
+increased	MIR21	unfavourable prognosis	patient	glioma	overexpression	#156:10123	pmid:32144351	CIViC B3	civic	8000	#29:0	not required
+increased	WDR12	unfavourable prognosis	patient	glioblastoma multiforme	overexpression	#156:10124	pmid:32180229	CIViC B4	civic	8004	#29:0	not required
+increased	CUL7	unfavourable prognosis	patient	brain glioma	overexpression	#156:10128	pmid:32252802	CIViC B4	civic	8087	#29:0	not required
+increased	EGFR	unfavourable prognosis	patient	brain glioblastoma multiforme	overexpression	#156:10139	pmid:14583498	CIViC B3	civic	474	#29:0	not required
+increased	AR	sensitivity	Dactolisib [c74072]	breast cancer	overexpression	#156:10144	pmid:24356815	CIViC D3	civic	859	#29:0	not required
+increased	ERCC1	resistance	platinum-based chemotherapy [c1450]	epithelial ovarian cancer	increased RNA expression	#156:10434	pmid:25015375	CIViC B	Null	NA	#32:7	initial
+reduced	ERCC1	sensitivity	olaparib [DB09074]	epithelial ovarian cancer	reduced protein expression	#156:10438	pmid:30797591	CIViC D	Null	NA	#32:7	initial
+increased	CCND1	unfavourable prognosis	patient	mantle cell lymphoma	overexpression	#156:10448	pmid:17891190	CIViC B4	civic	358	#29:0	not required
+increased	HIF1A	unfavourable prognosis	patient	sarcoma	overexpression	#156:10473	pmid:17103226	CIViC B2	civic	1034	#29:0	not required
+reduced	LEPR	unfavourable prognosis	patient	meningioma	underexpression	#156:10474	pmid:26894859	CIViC B2	civic	1054	#29:0	not required
+reduced	ATM	unfavourable prognosis	patient	pancreatic cancer	underexpression	#156:10482	pmid:25423555	CIViC B2	civic	1292	#29:0	not required
+increased	BCL2L1	resistance	cisplatin [DB00515]	ovarian carcinoma	increased expression	#156:10519	pmid:15661210	CIViC D	Null	NA	#32:7	initial
+increased	CD33	sensitivity	gemtuzumab ozogamicin [DB00056]	acute myeloid leukemia	increased protein expression	#156:10522	NA	IPR-A	Null	NA	#30:0	NA
+increased	BCL2L1	resistance	cisplatin [DB00515]	ovarian carcinoma	increased protein expression	#156:10526	pmid:11857368	CIViC D	Null	NA	#32:7	initial
+reduced	RRM1	sensitivity	gemcitabine [DB00441]	non-small cell lung cancer	reduced RNA expression	#156:10587	pmid:21889227	CIViC B	Null	NA	#32:7	initial
+increased	RRM1	resistance	gemcitabine [DB00441]	pancreatic cancer	increased RNA expression	#156:10588	pmid:21617862	CIViC D	Null	NA	#32:7	initial
+increased	TP53	sensitivity	cisplatin + etoposide + mitomycin	stomach cancer	overexpression	#156:10617	pmid:14514923	CIViC B4	civic	2799	#29:0	not required
+increased	IGF2	sensitivity	Cabazitaxel [c66937]	prostate cancer	overexpression	#156:10652	pmid:25670080	CIViC D3	civic	414	#29:0	not required
+reduced	BRCA1	sensitivity	platinum compound + taxane compound	ovarian cancer	underexpression	#156:10675	pmid:21920589	CIViC B3	civic	942	#29:0	not required
+increased	DDX43	resistance	Trametinib [c77908]	uveal melanoma	overexpression	#156:10687	pmid:24899684	CIViC D4	civic	1135	#29:0	not required
+increased	ERBB3	resistance	her2 inhibitor cp-724,714 [c26648]	cancer	overexpression	#156:10689	pmid:24685132	CIViC D4	civic	1153	#29:0	not required
+increased	RB1	resistance	gemcitabine [c66876]	pancreatic adenocarcinoma	overexpression	#156:10699	pmid:11792751	CIViC D2	civic	1324	#29:0	not required
+increased	RRM1	resistance	gemcitabine [c66876]	pancreatic cancer	overexpression	#156:10717	pmid:17224927	CIViC D2	civic	1859	#29:0	not required
+increased	AKT3	resistance	Akt Inhibitor MK2206 [c90581]	breast cancer	overexpression	#156:10719	pmid:27297869	CIViC D4	civic	1922	#29:0	not required
+reduced	RRM1	sensitivity	gemcitabine [c66876]	lung non-small cell carcinoma	underexpression	#156:10748	pmid:24647522	CIViC B4	civic	5530	#29:0	not required
+reduced	RRM1	sensitivity	Paclitaxel [c1411]	lung non-small cell carcinoma	underexpression	#156:10749	pmid:23038758	CIViC B3	civic	5599	#29:0	not required
+increased	ERBB2	sensitivity	capecitabine + trastuzumab + zoledronic acid	salivary gland cancer	overexpression	#156:10756	pmid:20504363	CIViC C3	civic	6171	#29:0	not required
+increased	ESR1	eligibility	A Phase 1/2 Study for the Safety, Efficacy, Pharmacokinetic and Pharmacodynamics Evaluation of SAR439859, Administered Orally as Monotherapy, Then in Combination With Palbociclib in Postmenopausal Women With Estrogen Receptor-positive Advanced Breast Cancer (AMEERA-1)	breast cancer	increased protein expression	#156:10983	NA	IPR-C	Null	NA	#30:0	passed
+increased	TNFRSF8	eligibility	a phase 2 study of brentuximab vedotin plus cyclophosphamide, doxorubicin, etoposide, and prednisone (chep-bv) followed by bv consolidation in patients with cd30-positive peripheral t-cell lymphomas	peripheral t-cell lymphoma	increased protein expression	#156:10985	NA	IPR-C	Null	NA	#30:0	passed
+increased	KDM4B	sensitivity	anthracyclines [c1594]	breast cancer	increased RNA expression	#156:11011	pmid:31700186	IPR-D	Null	NA	#30:14	NA
+increased	ADRA1A	sensitivity	alpha blocker	NA	increased RNA expression	#156:12532	pmid:15163273	NA	Null	NA	#30:6	initial
+increased	ACTL6A	sensitivity	cisplatin + panobinostat	lung adenocarcinoma	overexpression	#156:12967	pmid:33408251	CIViC D4	civic	8978	#29:0	not required
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	urinary bladder cancer	increased protein expression	#156:12982	NA	NA	Null	NA	#30:0	initial
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	non-small cell lung cancer	increased protein expression	#156:12983	NA	NA	Null	NA	#30:0	initial
+increased	MAGEA4	eligibility	Phase 1 Dose Escalation, Multi-tumor Study to Assess the Safety, Tolerability and Antitumor Activity of Genetically Engineered MAGE-A4ᶜ¹º³²T in HLA-A2+ Subjects With MAGE-A4 Positive Tumors	myxoid/round cell liposarcoma	increased protein expression	#156:12985	NA	NA	Null	NA	#30:0	initial
+increased	FGFR3	sensitivity	Dovitinib [c76199]	bladder carcinoma	overexpression	#156:13011	pmid:21119661	CIViC D3	civic	803	#29:0	not required
+increased	ABCB1	resistance	Dasatinib [c38713]	chronic myeloid leukemia	overexpression	#156:13020	pmid:18191450	CIViC D3	civic	2681	#29:0	not required
+increased	EGFR	no response	Cetuximab [c1723]	head and neck squamous cell carcinoma	overexpression	#156:13077	pmid:23265711	CIViC B4	civic	692	#29:0	not required
+increased	ERBB2	no response	capecitabine + trastuzumab	pancreatic cancer	overexpression	#156:13109	pmid:22374460	CIViC B4	civic	5955	#29:0	not required
+reduced	RB1	eligibility	A Phase I-II, Open Label Study Evaluating the Safety and Efficacy of Alisertib and Pembrolizumab in Patients With Rb-Deficient Head and Neck Squamous Cell Carcinomas	head and neck squamous cell carcinoma	reduced protein expression	#156:13139	NA	IPR-C	Null	NA	#30:0	initial
+increased	AKT1	no resistance	Vemurafenib [c64768]	melanoma	overexpression	#156:13182	pmid:24265155	CIViC D3	civic	6259	#29:0	not required
+increased	LYN	no resistance	Bafetinib [c62516]	chronic myeloid leukemia	overexpression	#156:13196	pmid:18191450	CIViC D3	civic	7874	#29:0	not required
+reduced	ATRX	unfavourable prognosis	patient	childhood low-grade glioma	underexpression	#156:13269	pmid:29948154	CIViC B4	civic	7190	#29:0	not required

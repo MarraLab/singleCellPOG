@@ -1,16 +1,23 @@
-source("../../scFunctions.R")
+source("scFunctions_forSubmission.R")
 
-args_file <- fread("../../Data/WholeCohort.csv")
+args_file <- fread("PATH/WholeCohort.csv")
+# This file is not included for privacy/security. The relevant columns are:
+# "folder_name": Sample ID    
+# "file_path": CellRanger outputs for snRNA-seq    
+# "file_path_atac": CellRanger outputs for snATAC-seq 
+# "fragments_path": snATAC-seq fragments file 
+# "pog_path": SNVs from bulk WGS        
+# "bam_path": Raw BAM file for snATAC-seq 
 
 # atac requirements
 pfm <- getMatrixSet(
   x = JASPAR2020,
   opts = list(all_versions = FALSE)
 )
-annotations <- readRDS("../../Data/annotations_ATAC.RDS")
+annotations <- readRDS("PATH/Data/annotations_ATAC.RDS")
 
 # cell type annotation
-BoroniReference <- readRDS("PATH/boroniCellTypeAnnotRef.RDS")
+reference <- readRDS("cellTypeReference.RDS") # seurat object generated from data from CELLxGENE
 
 for(i in seq(1, args_file[-10])){
   mode <- args_file[[i, 2]]
@@ -60,12 +67,12 @@ for(i in seq(1, args_file[-10])){
     FindClusters(resolution = res, graph.name = "RNA_snn")
   
   # cell type annotation
-  anchors <- FindTransferAnchors(reference = BoroniReference,
+  anchors <- FindTransferAnchors(reference = reference,
                                  query = seurat,
                                  # normalization.method = "SCT",
                                  dims = 1:30,
                                  reference.reduction = "rpca")
-  predictions <- TransferData(anchorset = anchors, refdata = BoroniReference$cellType, dims = 1:30)
+  predictions <- TransferData(anchorset = anchors, refdata = reference$cellType, dims = 1:30)
   seurat <- AddMetaData(seurat, predictions)
 
   saveRDS(seurat, paste0(path, folder_name, "/rna_ProcessedSeurat.RDS"))
@@ -99,7 +106,7 @@ for(i in seq(1, args_file[-10])){
     object = seurat_atac,
     assay = "ATAC",
     group.by = "seurat_clusters",
-    macs2.path = "~/anaconda3/bin/macs2"
+    macs2.path = "PATH/macs2"
   )
 
   keep.peaks <- as.logical(seqnames(granges(peaks)) %in% main.chroms)

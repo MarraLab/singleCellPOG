@@ -1,7 +1,7 @@
-source("../../scFunctions.R")
+source("scFunctions_forSubmission.R")
 
 # relevant genes from gkb
-graphkb <- fread("../../Data/GraphKBExpression.txt")
+graphkb <- fread("Data/GraphKBExpression.txt") 
 relevance_reTreatment <- c("sensitivity", "response", "eligibility", "likely sensitivity", "targetable")
 
 relevant_gkb <- relevant_genes <- graphkb %>%
